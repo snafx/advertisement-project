@@ -14,7 +14,7 @@ public class AdvertisementRepository {
 
     public static Optional<Advertisement> findById(Integer id) {
         Session session = null;
-        try{
+        try {
             session = HibernateUtil.openSession().getSession();
             String hql = "SELECT e FROM Advertisement e WHERE e.id=:id";
             Query query = session.createQuery(hql);
@@ -31,7 +31,7 @@ public class AdvertisementRepository {
 
     public static List<Advertisement> findByCategory(CATEGORY category) {
         Session session = null;
-        try{
+        try {
             session = HibernateUtil.openSession().getSession();
             String hql = "SELECT e FROM Advertisement e WHERE e.category=:category";
             Query query = session.createQuery(hql);
@@ -48,7 +48,25 @@ public class AdvertisementRepository {
 
     public static Integer persist(Advertisement advertisement) {
         Session session = null;
-        try{
+        try {
+            session = HibernateUtil.openSession().getSession();
+            session.getTransaction().begin();
+            session.persist(advertisement);
+            session.getTransaction().commit();
+            return advertisement.getId();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            session.getTransaction().rollback();
+            return 0;
+        } finally {
+            session.close();
+        }
+    }
+
+    public static Integer merge(Advertisement advertisement) {
+        Session session = null;
+        try {
+
             session = HibernateUtil.openSession().getSession();
             session.getTransaction().begin();
             session.persist(advertisement);
