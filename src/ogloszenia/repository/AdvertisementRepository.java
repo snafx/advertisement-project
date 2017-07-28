@@ -63,19 +63,40 @@ public class AdvertisementRepository {
         }
     }
 
-    public static Integer merge(Advertisement advertisement) {
+    public static boolean merge(Advertisement advertisement) {
         Session session = null;
         try {
-
             session = HibernateUtil.openSession().getSession();
             session.getTransaction().begin();
-            session.persist(advertisement);
+            session.merge(advertisement);
             session.getTransaction().commit();
-            return advertisement.getId();
+            return true;
         } catch (Exception ex) {
             ex.printStackTrace();
             session.getTransaction().rollback();
-            return 0;
+            return false;
+        } finally {
+            session.close();
+        }
+    }
+
+    public static boolean delete(Integer id) {
+        Session session = null;
+        try {
+            session = HibernateUtil.openSession().getSession();
+            Optional<Advertisement> advertisement = findById(id);
+            if (advertisement.isPresent()) {
+                session.getTransaction().begin();
+                advertisement.get().setIsActive(false);
+                session.merge(advertisement.get());
+                session.getTransaction().commit();
+                return true;
+            }
+            return false;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            session.getTransaction().rollback();
+            return false;
         } finally {
             session.close();
         }

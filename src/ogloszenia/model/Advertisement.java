@@ -135,11 +135,11 @@ public class Advertisement {
         this.dataTo = dataTo;
     }
 
-    public Boolean getActive() {
+    public Boolean getIsActive() {
         return isActive;
     }
 
-    public void setActive(Boolean active) {
+    public void setIsActive(Boolean active) {
         isActive = active;
     }
 
@@ -181,6 +181,14 @@ public class Advertisement {
 
     public void setViews(Integer views) {
         this.views = views;
+    }
+
+    public Set<User> getWatchers() {
+        return watchers;
+    }
+
+    public void setWatchers(Set<User> watchers) {
+        this.watchers = watchers;
     }
 
     public Set<Message> getMessages() {
