@@ -13,5 +13,6 @@
         <mapping class="ogloszenia.model.User" />
         <mapping class="ogloszenia.model.Message" />
         <mapping class="ogloszenia.model.Image" />
+        <mapping class="ogloszenia.model.CATEGORY" />
     </session-factory>
 </hibernate-configuration>

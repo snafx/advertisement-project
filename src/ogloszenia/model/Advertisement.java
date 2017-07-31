@@ -21,7 +21,7 @@ public class Advertisement {
     byte[] img;
 
     @JoinColumn(nullable = false)
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     User owner; //powiazanie z inna kolumna
 
     @Column(nullable = false)
@@ -62,13 +62,29 @@ public class Advertisement {
     )
     private Set<User> watchers;
 
-    @OneToMany(mappedBy = "advertisementId")
+    @OneToMany(mappedBy = "advertisementId")  //zawsze trzeba wskazac mapowanie OneToMany
     Set<Message> messages;
 
     @OneToMany(mappedBy = "advertisementId")
     Set<Image> images;
 
     public Advertisement() {
+    }
+
+    public Advertisement(String title, BigDecimal price, String description, String location, User user) {
+        this.title = title;
+        this.text = description;
+        this.price = price;
+        this.cityName = location;
+        this.owner = user;
+
+        this.category = CATEGORY.MOTORYZACJA;
+        this.isPremium = false;
+        this.isActive = true;
+        this.views = 0;
+        this.dateFrom = LocalDate.now();
+        this.dataTo = this.dateFrom.plusMonths(1);
+        this.rating = 0;
     }
 
     public Integer getId() {

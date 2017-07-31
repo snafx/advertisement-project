@@ -20,6 +20,7 @@ public class AdvertisementRepository {
             Query query = session.createQuery(hql);
             query.setParameter("id", id);
             return Optional.ofNullable((Advertisement) query.getSingleResult());
+            //Optional opakowuje nam obiekt ktory moze byc nullem (informuje nas ze moze byc nullem, programisto sprawdz to)
         } catch (Exception ex) {
             ex.printStackTrace();
             session.getTransaction().rollback();

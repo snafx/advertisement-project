@@ -1,3 +1,12 @@
-ogloszenia\Ogloszenie.class
 ogloszenia\Test.class
+ogloszenia\model\Image.class
+ogloszenia\model\Advertisement.class
 ogloszeniar\hibernate\util\HibernateUtil.class
+ogloszenia\model\Message.class
+ogloszenia\AddNewAdServlet.class
+ogloszenia\model\User.class
+ogloszenia\repository\UserRepository.class
+ogloszenia\RegisterUserServlet.class
+ogloszenia\model\CATEGORY.class
+ogloszenia\repository\AdvertisementRepository.class
+ogloszenia\repository\ImageRepository.class
