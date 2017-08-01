@@ -9,34 +9,37 @@ public class User {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(unique=true)
-    Integer id;
+    private Integer id;
 
     @Column(nullable=false,unique=true)
-    String nick;
+    private String nick;
 
     @Column(nullable=false)
-    String password;
+    private String password;
 
     @Lob
-    byte[] avatar;
+    private byte[] avatar;
 
     @Column(nullable=false)
-    String email;
+    private String email;
 
     @Column(nullable=false)
-    String cityName;
+    private String cityName;
 
     @ManyToMany(mappedBy = "watchers")
     private Set<Advertisement> followedAdvertisements;
 
     @OneToMany(mappedBy = "owner") //tutaj jest zawsze nazwa pola ktora powiazuje
-    Set<Advertisement> ads;
+    private Set<Advertisement> ads;
 
-    @OneToMany(mappedBy="messageSender")
-    Set<Message> sendMessages;
+    @OneToMany(mappedBy="conversationSender")
+    private Set<Conversation> sendConversations;
 
-    @OneToMany(mappedBy="messageReceiver")
-    Set<Message> receivedMessages;
+    @OneToMany(mappedBy="conversationReceiver")
+    private Set<Conversation> receivedConversations;
+
+    @OneToMany(mappedBy = "owner")
+    private Set<ConversationMessage> conversationMessage;
 
     public User() {
     }
@@ -96,6 +99,14 @@ public class User {
         this.cityName = cityName;
     }
 
+    public Set<Advertisement> getFollowedAdvertisements() {
+        return followedAdvertisements;
+    }
+
+    public void setFollowedAdvertisements(Set<Advertisement> followedAdvertisements) {
+        this.followedAdvertisements = followedAdvertisements;
+    }
+
     public Set<Advertisement> getAds() {
         return ads;
     }
@@ -104,27 +115,27 @@ public class User {
         this.ads = ads;
     }
 
-    public Set<Message> getSendMessages() {
-        return sendMessages;
+    public Set<Conversation> getSendConversations() {
+        return sendConversations;
     }
 
-    public void setSendMessages(Set<Message> sendMessages) {
-        this.sendMessages = sendMessages;
+    public void setSendConversations(Set<Conversation> sendConversations) {
+        this.sendConversations = sendConversations;
     }
 
-    public Set<Message> getReceivedMessages() {
-        return receivedMessages;
+    public Set<Conversation> getReceivedConversations() {
+        return receivedConversations;
     }
 
-    public void setReceivedMessages(Set<Message> receivedMessages) {
-        this.receivedMessages = receivedMessages;
+    public void setReceivedConversations(Set<Conversation> receivedConversations) {
+        this.receivedConversations = receivedConversations;
     }
 
-    public Set<Advertisement> getFollowedAdvertisements() {
-        return followedAdvertisements;
+    public Set<ConversationMessage> getConversationMessage() {
+        return conversationMessage;
     }
 
-    public void setFollowedAdvertisements(Set<Advertisement> followedAdvertisements) {
-        this.followedAdvertisements = followedAdvertisements;
+    public void setConversationMessage(Set<ConversationMessage> conversationMessage) {
+        this.conversationMessage = conversationMessage;
     }
 }

@@ -27,7 +27,7 @@
         <servlet-class>ogloszenia.ArchiveAdServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ArchiveAdServlet</servlet-name>
+        <servlet-name>archiveAdServlet</servlet-name>
         <url-pattern>/archive-ad</url-pattern>
     </servlet-mapping>
 

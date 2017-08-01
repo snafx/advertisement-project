@@ -5,6 +5,7 @@ ogloszeniar\hibernate\util\HibernateUtil.class
 ogloszenia\model\Message.class
 ogloszenia\AddNewAdServlet.class
 ogloszenia\model\User.class
+ogloszenia\ArchiveAdServlet.class
 ogloszenia\repository\UserRepository.class
 ogloszenia\RegisterUserServlet.class
 ogloszenia\model\CATEGORY.class

@@ -12,48 +12,48 @@ public class Advertisement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //bedzie autoinkrementacja
     @Column(unique = true)  //jest to wartosc unikalna dla kolumny
-    Integer id;
+    private Integer id;
 
     @Column(nullable = false)
-    String title;
+    private String title;
 
     @Lob //tu bedzie odbierany strumien z "obrazkiem"
-    byte[] img;
+    private byte[] img;
 
     @JoinColumn(nullable = false)
     @ManyToOne(cascade = CascadeType.ALL)
-    User owner; //powiazanie z inna kolumna
+    private User owner; //powiazanie z inna kolumna
 
     @Column(nullable = false)
-    BigDecimal price;
+    private BigDecimal price;
 
     @Column(nullable = false)
-    String text;
+    private String text;
 
     @Column(nullable = false)
-    LocalDate dateFrom;
+    private LocalDate dateFrom;
 
     @Column(nullable = false)
-    LocalDate dataTo;
+    private LocalDate dataTo;
 
     @Column(nullable = false)
-    Boolean isActive;
+    private Boolean isActive;
 
     @Column(nullable = false)
-    Boolean isPremium;
+    private Boolean isPremium;
 
     @Column(nullable = false)
-    String cityName;
+    private String cityName;
 
     @Column(nullable = false)
-    Integer rating;
+    private Integer rating;
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    CATEGORY category;
+    private CATEGORY category;
 
     @Column(nullable = false)
-    Integer views;
+    private Integer views;
 
     @ManyToMany
     @JoinTable(
@@ -63,10 +63,10 @@ public class Advertisement {
     private Set<User> watchers;
 
     @OneToMany(mappedBy = "advertisementId")  //zawsze trzeba wskazac mapowanie OneToMany
-    Set<Message> messages;
+    private Set<Conversation> conversations;
 
     @OneToMany(mappedBy = "advertisementId")
-    Set<Image> images;
+    private Set<Image> images;
 
     public Advertisement() {
     }
@@ -207,12 +207,12 @@ public class Advertisement {
         this.watchers = watchers;
     }
 
-    public Set<Message> getMessages() {
-        return messages;
+    public Set<Conversation> getConversations() {
+        return conversations;
     }
 
-    public void setMessages(Set<Message> messages) {
-        this.messages = messages;
+    public void setConversations(Set<Conversation> conversations) {
+        this.conversations = conversations;
     }
 
     public Set<Image> getImages() {
