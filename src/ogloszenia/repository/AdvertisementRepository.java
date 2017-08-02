@@ -102,4 +102,42 @@ public class AdvertisementRepository {
             session.close();
         }
     }
+
+    public static List<Advertisement> findByPhrase(String phrase) {
+        Session session = null;
+        try {
+            session = HibernateUtil.openSession().getSession();
+            String hql = "SELECT e FROM Advertisement e WHERE UPPER (e.title) LIKE :phrase OR UPPER (e.text) LIKE :phrase " +
+                    "ORDER BY e.id DESC";
+            Query query = session.createQuery(hql);
+            query.setParameter("phrase", "%" + phrase.toUpperCase() + "%");
+            return query.getResultList();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            session.getTransaction().rollback();
+            return Collections.emptyList();
+        } finally {
+            session.close();
+        }
+    }
+
+    public static List<Advertisement> findByPhraseAndLocation(String phrase, String location) {
+        Session session = null;
+        try {
+            session = HibernateUtil.openSession().getSession();
+            String hql = "SELECT e FROM Advertisement e WHERE " +
+                    "(UPPER(e.title) LIKE :phrase AND UPPER(e.cityName) LIKE :location) " +
+                    "OR (UPPER(e.text) LIKE :phrase AND UPPER(e.cityName) LIKE :location) ORDER BY e.id DESC";
+            Query query = session.createQuery(hql, Advertisement.class);
+            query.setParameter("phrase", "%" + phrase.toUpperCase() + "%");
+            query.setParameter("location", "%" + location.toUpperCase() + "%");
+            return query.getResultList();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            session.getTransaction().rollback();
+            return Collections.emptyList();
+        } finally {
+            session.close();
+        }
+    }
 }

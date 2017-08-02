@@ -30,5 +30,13 @@
         <servlet-name>archiveAdServlet</servlet-name>
         <url-pattern>/archive-ad</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>searchAdServlet</servlet-name>
+        <servlet-class>ogloszenia.SearchAdServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>searchAdServlet</servlet-name>
+        <url-pattern>/search-ad</url-pattern>
+    </servlet-mapping>
 
 </web-app>
