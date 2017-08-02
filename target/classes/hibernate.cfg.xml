@@ -11,7 +11,8 @@
   		<property name="hibernate.hbm2ddl.auto">create</property>
         <mapping class="ogloszenia.model.Advertisement" />
         <mapping class="ogloszenia.model.User" />
-        <mapping class="ogloszenia.model.Message" />
+        <mapping class="ogloszenia.model.Conversation" />
         <mapping class="ogloszenia.model.Image" />
+        <mapping class="ogloszenia.model.ConversationMessage" />
     </session-factory>
 </hibernate-configuration>
