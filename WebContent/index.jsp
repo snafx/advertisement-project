@@ -75,7 +75,7 @@
 
  <!-- kontener z contentem -->
                 <div class="container ad">
-                
+
                  <!-- pierwsze ogloszenie -->
                     <div class="media panel">
 
