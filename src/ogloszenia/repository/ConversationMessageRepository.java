@@ -5,10 +5,12 @@ import ogloszeniar.hibernate.util.HibernateUtil;
 import org.hibernate.Session;
 
 public class ConversationMessageRepository {
+
+    //dodanie pojedynczej wiadomosci do bazy
     public static Integer persist(ConversationMessage conversationMessage) {
         Session session = null;
         try {
-            session = HibernateUtil.openSession().getSession();
+            session = HibernateUtil.openSession();
             session.getTransaction().begin();
             session.persist(conversationMessage);
             session.getTransaction().commit();

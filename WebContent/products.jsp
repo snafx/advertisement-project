@@ -10,9 +10,10 @@
 <%
     String categoryParam = request.getParameter("category");
     CATEGORY category = CATEGORY.valueOf(categoryParam);
+    pageContext.setAttribute("category", category);
 %>
 
-<c:set var="adList" value="${AdvertisementRepository.findByCategory(category)}"/>
+<c:set value="${AdvertisementRepository.findByCategory(category)}" var="adList"/>
 
 
 <head>
@@ -85,60 +86,29 @@
         </div>
     </div>
 
+    <!-- kontener z contentem -->
     <div class="container ad">
-        <c:forEach item="${adList}" var="ad">
-        <div class="media panel">
 
-                    <div class="media-left media-middle">
-                        <a href="#">
-                            <img class="media-object small-object" src="http://blog.caranddriver.com/wp-content/uploads/2016/11/Ford-Mustang-Shelby-GT350-lead.jpg" alt="brak zdjeci">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">${ad.title}</h4>
-                        ${ad.text}
-                        <h3 class="price">${ad.price} zł</h3>
-                    </div>
+        <c:forEach items="${adList}" var="ad">
+            <!--  ogloszenie -->
+            <div class="media panel">
+                <div class="media-left media-middle">
+                    <a href="#">
+                        <img class="media-object small-object" src="http://blog.caranddriver.com/wp-content/uploads/2016/11/Ford-Mustang-Shelby-GT350-lead.jpg" alt="brak zdjecia">
+                    </a>
                 </div>
-
+                <div class="media-body">
+                    <h4 class="media-heading">${ad.title}</h4>
+                    ${ad.text}
+                    <h3 class="price">${ad.price} zł.</h3>
+                </div>
+            </div>
 
         </c:forEach>
 
-
-
-        <div class="media panel">
-
-            <div class="media-left media-middle">
-                <a href="#">
-                    <img class="media-object small-object" src="http://blog.caranddriver.com/wp-content/uploads/2016/11/Ford-Mustang-Shelby-GT350-lead.jpg" alt="brak zdjeci">
-                </a>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading">Middle aligned media</h4>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, hic fugiat id illo quod porro quam corporis sint quidem blanditiis quo quas reprehenderit officia! Quibusdam magni ipsa voluptas ullam molestiae.
-                <h3 class="price">
-                    50.000 zł
-                </h3>
-            </div>
-        </div>
-        <div class="media panel">
-
-            <div class="media-left media-middle">
-                <a href="#">
-                    <img class="media-object small-object" src="http://blog.caranddriver.com/wp-content/uploads/2016/11/Ford-Mustang-Shelby-GT350-lead.jpg" alt="brak zdjeci">
-                </a>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading">Middle aligned media</h4>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, hic fugiat id illo quod porro quam corporis sint quidem blanditiis quo quas reprehenderit officia! Quibusdam magni ipsa voluptas ullam molestiae.
-                <h3 class="price">
-                    50.000 zł
-                </h3>
-            </div>
-        </div>
-
     </div>
 
+    <!-- footer -->
     <footer>
         <div class="container footer form-inline">
             <div class="col-md-3">

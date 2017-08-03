@@ -49,7 +49,7 @@ public class Advertisement {
     private Integer rating;
 
     @Column(nullable = false)
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING) /*w baazaie danych zostanie zapisany string z nazwa kategorii*/
     private CATEGORY category;
 
     @Column(nullable = false)

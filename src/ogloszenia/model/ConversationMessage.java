@@ -5,6 +5,14 @@ import javax.persistence.*;
 @Entity
 public class ConversationMessage {
 
+    /**
+     * Wiadomość - pojedyncza wiadomosc przypisana o danej konwersacji
+     * id
+     * id konwersacji (caly obiekt)
+     * text
+     * autor (autorem bedzie albo nadawca konwersacji albo odbiorca konwesacji: jedna z tym dwoch osob)
+     */
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true)
@@ -13,6 +21,7 @@ public class ConversationMessage {
     @Column(nullable=false)
     private String messageContent;
 
+    //jesli przy dodawaniu nowej wiadomosci konwersacja nie bedzie istniala, to najpierw ja doda, a dopiero potem doda wiadomosc
     @ManyToOne(cascade = CascadeType.ALL) //dodaje nam kaskadowo do bazy, najpierw conversation, potem converMeasage
     @JoinColumn
     private Conversation conversation;

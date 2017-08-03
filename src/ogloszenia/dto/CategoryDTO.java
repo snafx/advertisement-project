@@ -3,6 +3,11 @@ package ogloszenia.dto;
 
 import ogloszenia.model.CATEGORY;
 
+/**
+ * klasa - wrapper ktory umozliwi ładne generowanie i prezentowanie pojedynczej kategorii
+ * DTO - data transfer object
+ */
+
 public class CategoryDTO {
     String name;
     String iconName;

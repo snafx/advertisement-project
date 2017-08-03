@@ -8,6 +8,15 @@ import java.util.Set;
 @Entity
 public class Conversation {
 
+    /*
+ * konwersacja - watek wiadomosci dotyczacy danego ogloszenia pomiedzy wlascicielem a jakims innym userem
+    id ogloszenia
+    id nadawca
+    id odbiorca
+    zbior wiadomosci w tym wątku
+    data
+ */
+
     @Id
     @Column(name="id", unique=true)
     @GeneratedValue(strategy=GenerationType.IDENTITY)

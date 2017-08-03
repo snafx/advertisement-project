@@ -12,7 +12,7 @@ public class UserRepository {
     public static Optional<User> findByEmail(String email) {
         Session session = null;
         try{
-            session = HibernateUtil.openSession().getSession();
+            session = HibernateUtil.openSession();
             String hql = "SELECT e FROM User e WHERE e.email= :email";
             Query query = session.createQuery(hql);
             query.setParameter("email", email);
@@ -29,7 +29,7 @@ public class UserRepository {
     public static void persist(User user) {
         Session session = null;
         try{
-            session = HibernateUtil.openSession().getSession();
+            session = HibernateUtil.openSession();
             session.getTransaction().begin();
             session.persist(user);
             session.getTransaction().commit();

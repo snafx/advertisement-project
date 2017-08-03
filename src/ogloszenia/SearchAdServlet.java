@@ -22,11 +22,14 @@ private static final long serialVersionUID = 1L;
         location = req.getParameter("location");
         phrase = req.getParameter("phrase");
 
+        //user musi podac nazwie, nie musi podac lokaliacji
         if (phrase.isEmpty()) {
             resp.getWriter().write("Please enter searched query");
         } else if(location.isEmpty()){
+            //szukamy po samej nazwie
             List<Advertisement> ad = AdvertisementRepository.findByPhrase(phrase);
         } else {
+            //szukamy po nazwie i lokalizacji
             List<Advertisement> ad = AdvertisementRepository.findByPhraseAndLocation(phrase, location);
         }
     }

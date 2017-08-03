@@ -29,11 +29,11 @@ public class ConversationRepository {
         }
     }
 
-    //znajdujemy po id sendera lub receivera
+    //znajdujemy po id sendera lub receivera, zakladamy ze user mogl byc nadawca lub odbiorca konwersacji
     public static List<Conversation> findByUserId(Integer id) {
         Session session = null;
         try {
-            session = HibernateUtil.openSession().getSession();
+            session = HibernateUtil.openSession();
             String hql = "SELECT e FROM Conversation e WHERE e.conversationSender.id=:id OR e.conversationReceiver.id=:id";
             Query query = session.createQuery(hql);
             query.setParameter("id", id);
@@ -47,6 +47,7 @@ public class ConversationRepository {
         }
     }
 
+    //dodanie konwersacji
     public static Integer persist(Conversation conversation) {
         Session session = null;
         try {

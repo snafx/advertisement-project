@@ -23,7 +23,9 @@ public class ArchiveAdServlet extends HttpServlet {
             e.printStackTrace();
         }
         if (id != null) {
-            Optional<Advertisement> advertisement = AdvertisementRepository.findById(id); //bo ktos moze wpisac ID ktorego nie ma, dlatego Optional
+            //optional, bo np mogl przyjsc takie id, ktorego nie ma w bazie
+            //wtedy optional ladnie to opakuje w nulla bez wywalania bledu
+            Optional<Advertisement> advertisement = AdvertisementRepository.findById(id);
 
             advertisement.ifPresent(a -> disableAd(a));
         }

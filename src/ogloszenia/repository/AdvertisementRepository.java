@@ -47,6 +47,7 @@ public class AdvertisementRepository {
         }
     }
 
+    //dodanie ogloszenia
     public static Integer persist(Advertisement advertisement) {
         Session session = null;
         try {
@@ -64,6 +65,7 @@ public class AdvertisementRepository {
         }
     }
 
+    //update ogloszenia - moja wersja definiowania sesji i transakcji
     public static boolean merge(Advertisement advertisement) {
         Session session = null;
         try {
@@ -81,14 +83,16 @@ public class AdvertisementRepository {
         }
     }
 
+    //usuwanie ogloszena, czyli przeniesienie do archiwum
     public static boolean delete(Integer id) {
         Session session = null;
         try {
-            session = HibernateUtil.openSession().getSession();
+            session = HibernateUtil.openSession();
             Optional<Advertisement> advertisement = findById(id);
+            //sprawdzam, czy optional nie jest nullem
             if (advertisement.isPresent()) {
                 session.getTransaction().begin();
-                advertisement.get().setIsActive(false);
+                advertisement.get().setIsActive(false); //ustawiam ogloszenie jako nieaktywne
                 session.merge(advertisement.get());
                 session.getTransaction().commit();
                 return true;
@@ -103,14 +107,15 @@ public class AdvertisementRepository {
         }
     }
 
+    //wyszukiwanie po frazie
     public static List<Advertisement> findByPhrase(String phrase) {
         Session session = null;
         try {
-            session = HibernateUtil.openSession().getSession();
+            session = HibernateUtil.openSession();
             String hql = "SELECT e FROM Advertisement e WHERE UPPER (e.title) LIKE :phrase OR UPPER (e.text) LIKE :phrase " +
                     "ORDER BY e.id DESC";
             Query query = session.createQuery(hql);
-            query.setParameter("phrase", "%" + phrase.toUpperCase() + "%");
+            query.setParameter("phrase", "%" + phrase.toUpperCase() + "%"); //w zapytaniu tez robie wielkie litery
             return query.getResultList();
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -121,10 +126,11 @@ public class AdvertisementRepository {
         }
     }
 
+    //wyszukiwanie po frazie i lokalizacji
     public static List<Advertisement> findByPhraseAndLocation(String phrase, String location) {
         Session session = null;
         try {
-            session = HibernateUtil.openSession().getSession();
+            session = HibernateUtil.openSession();
             String hql = "SELECT e FROM Advertisement e WHERE " +
                     "(UPPER(e.title) LIKE :phrase AND UPPER(e.cityName) LIKE :location) " +
                     "OR (UPPER(e.text) LIKE :phrase AND UPPER(e.cityName) LIKE :location) ORDER BY e.id DESC";
