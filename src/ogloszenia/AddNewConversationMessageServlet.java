@@ -34,7 +34,9 @@ public class AddNewConversationMessageServlet extends HttpServlet{
             Conversation conversation = conversationTmp.get();
 
             ConversationMessage newMessage = new ConversationMessage(text, conversation, messageSender);
+
             ConversationMessageRepository.persist(newMessage);
+
             resp.getWriter().write("Wiadomość wysłana!");
         }
     }

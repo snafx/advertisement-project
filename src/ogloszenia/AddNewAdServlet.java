@@ -44,8 +44,9 @@ public class AddNewAdServlet extends HttpServlet {
         Advertisement ad = new Advertisement(title, price, description, location, owner);
         AdvertisementRepository.persist(ad);
 
-        PrintWriter pw = resp.getWriter();
-        pw.write("ok");
+        resp.sendRedirect("products.html");
+//        PrintWriter pw = resp.getWriter();
+//        pw.write("ok");
 
     }
 
