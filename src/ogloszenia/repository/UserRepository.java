@@ -7,6 +7,8 @@ import org.hibernate.query.Query;
 
 import java.util.Optional;
 
+import static ogloszenia.repository.ConversationMessageRepository.logger;
+
 public class UserRepository {
 
     public static Optional<User> findByEmail(String email) {
@@ -36,6 +38,23 @@ public class UserRepository {
         } catch (Exception ex) {
             ex.printStackTrace();
             session.getTransaction().rollback();
+        } finally {
+            session.close();
+        }
+    }
+
+    public static Optional<User> findById(int id) {
+        Session session = null;
+        try {
+            session = HibernateUtil.openSession();
+            String hql = "SELECT  e FROM User e WHERE e.id=:id";
+            Query query = session.createQuery(hql);
+            query.setParameter("id",id);
+            return  Optional.ofNullable( (User)query.getSingleResult());
+        } catch (Exception ex) {
+            logger.error(ex);
+            session.getTransaction().rollback();
+            return Optional.empty();
         } finally {
             session.close();
         }

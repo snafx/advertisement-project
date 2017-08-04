@@ -2,20 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c39cf44a-d456-4b8b-9aa9-c8764d045c4e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/lib/jstl-1.2.jar" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ogloszenia/Test.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ogloszenia/model/Advertisement.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ogloszenia/model/CATEGORY.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ogloszenia/model/Image.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ogloszenia/model/User.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ogloszeniar/hibernate/util/HibernateUtil.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/product.html" afterPath="$PROJECT_DIR$/WebContent/product.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ogloszenia/log4j.properties" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/jstl-1.2.jar" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/dodawanie-ogloszenia.html" afterPath="$PROJECT_DIR$/WebContent/dodawanie-ogloszenia.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ogloszenia.gg.iml" afterPath="$PROJECT_DIR$/Ogloszenia.gg.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/index.jsp" afterPath="$PROJECT_DIR$/WebContent/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/product.jsp" afterPath="$PROJECT_DIR$/WebContent/product.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/products.jsp" afterPath="$PROJECT_DIR$/WebContent/products.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/hibernate.cfg.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ogloszenia/AddNewAdServlet.java" afterPath="$PROJECT_DIR$/src/ogloszenia/AddNewAdServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ogloszenia/AddNewConversationMessageServlet.java" afterPath="$PROJECT_DIR$/src/ogloszenia/AddNewConversationMessageServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ogloszenia/model/Advertisement.java" afterPath="$PROJECT_DIR$/src/ogloszenia/model/Advertisement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ogloszenia/model/Conversation.java" afterPath="$PROJECT_DIR$/src/ogloszenia/model/Conversation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ogloszenia/model/ConversationMessage.java" afterPath="$PROJECT_DIR$/src/ogloszenia/model/ConversationMessage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ogloszenia/repository/CategoryRepository.java" afterPath="$PROJECT_DIR$/src/ogloszenia/repository/CategoryRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ogloszenia/repository/ConversationMessageRepository.java" afterPath="$PROJECT_DIR$/src/ogloszenia/repository/ConversationMessageRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ogloszenia/repository/UserRepository.java" afterPath="$PROJECT_DIR$/src/ogloszenia/repository/UserRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,63 +33,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="AddNewAdServlet.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ogloszenia/AddNewAdServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="23" column="33" lean-forward="false" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Advertisement.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ogloszenia/model/Advertisement.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="363">
+              <caret line="80" column="100" lean-forward="false" selection-start-line="80" selection-start-column="100" selection-end-line="80" selection-end-column="100" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConversationMessage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ogloszenia/model/ConversationMessage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="3" column="27" lean-forward="true" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dodawanie-ogloszenia.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebContent/dodawanie-ogloszenia.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="23" lean-forward="false" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="products.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebContent/products.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2176">
-              <caret line="128" column="7" lean-forward="false" selection-start-line="128" selection-start-column="7" selection-end-line="128" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebContent/product.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1258">
-              <caret line="74" column="62" lean-forward="false" selection-start-line="74" selection-start-column="62" selection-end-line="74" selection-end-column="62" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="54" column="12" lean-forward="false" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/web.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="46" lean-forward="true" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CategoryRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ogloszenia/repository/CategoryRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CategoryDTO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ogloszenia/dto/CategoryDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="17">
+              <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -92,8 +86,8 @@
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebContent/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -107,6 +101,11 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>AddNewConversationServlet</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -129,32 +128,34 @@
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/lib/web.xml" />
         <option value="$PROJECT_DIR$/WebContent/dodawanie-ogloszenia.html" />
         <option value="$PROJECT_DIR$/WebContent/add-new-user.html" />
-        <option value="$PROJECT_DIR$/src/ogloszenia/AddNewAdServlet.java" />
         <option value="$PROJECT_DIR$/src/ogloszenia/RegisterUserServlet.java" />
         <option value="$PROJECT_DIR$/src/ogloszenia/ArchiveAd.java" />
-        <option value="$PROJECT_DIR$/src/hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/src/ogloszenia/AddNewMessageServlet.java" />
         <option value="$PROJECT_DIR$/src/ogloszenia/model/User.java" />
         <option value="$PROJECT_DIR$/WebContent/products.html" />
-        <option value="$PROJECT_DIR$/src/ogloszenia/repository/UserRepository.java" />
         <option value="$PROJECT_DIR$/src/ogloszenia/repository/AdvertisementRepository.java" />
-        <option value="$PROJECT_DIR$/src/ogloszenia/repository/CategoryRepository.java" />
-        <option value="$PROJECT_DIR$/src/ogloszenia/repository/ConversationMessageRepository.java" />
         <option value="$PROJECT_DIR$/src/ogloszenia/repository/ConversationRepository.java" />
-        <option value="$PROJECT_DIR$/src/ogloszenia/AddNewConversationMessageServlet.java" />
         <option value="$PROJECT_DIR$/src/ogloszenia/AddNewConversationServlet.java" />
         <option value="$PROJECT_DIR$/src/ogloszenia/ArchiveAdServlet.java" />
         <option value="$PROJECT_DIR$/src/ogloszenia/SearchAdServlet.java" />
-        <option value="$PROJECT_DIR$/src/ogloszenia/model/Advertisement.java" />
-        <option value="$PROJECT_DIR$/src/ogloszenia/model/Conversation.java" />
-        <option value="$PROJECT_DIR$/src/ogloszenia/model/ConversationMessage.java" />
         <option value="$PROJECT_DIR$/src/ogloszenia/dto/CategoryDTO.java" />
         <option value="$PROJECT_DIR$/WebContent/product.html" />
+        <option value="$PROJECT_DIR$/src/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/ogloszenia/AddNewConversationMessageServlet.java" />
+        <option value="$PROJECT_DIR$/src/ogloszenia/repository/CategoryRepository.java" />
+        <option value="$PROJECT_DIR$/src/ogloszenia/model/Conversation.java" />
+        <option value="$PROJECT_DIR$/src/ogloszenia/model/ConversationMessage.java" />
+        <option value="$PROJECT_DIR$/src/ogloszenia/log4j.properties" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/ogloszenia/repository/ConversationMessageRepository.java" />
+        <option value="$PROJECT_DIR$/src/ogloszenia/repository/UserRepository.java" />
+        <option value="$PROJECT_DIR$/WebContent/products.jsp" />
         <option value="$PROJECT_DIR$/WebContent/index.jsp" />
         <option value="$PROJECT_DIR$/WebContent/product.jsp" />
-        <option value="$PROJECT_DIR$/WebContent/products.jsp" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/ogloszenia/AddNewAdServlet.java" />
+        <option value="$PROJECT_DIR$/WebContent/dodawanie-ogloszenia.jsp" />
+        <option value="$PROJECT_DIR$/src/ogloszenia/model/Advertisement.java" />
       </list>
     </option>
   </component>
@@ -185,6 +186,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -208,14 +212,35 @@
               <item name="ogloszenia-projekt" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="ogloszenia" type="462c0819:PsiDirectoryNode" />
-              <item name="dto" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Ogloszenia.gg" type="b2602c69:ProjectViewProjectNode" />
               <item name="ogloszenia-projekt" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="ogloszenia" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ogloszenia.gg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ogloszenia-projekt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ogloszeniar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ogloszenia.gg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ogloszenia-projekt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ogloszeniar" type="462c0819:PsiDirectoryNode" />
+              <item name="hibernate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ogloszenia.gg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ogloszenia-projekt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ogloszeniar" type="462c0819:PsiDirectoryNode" />
+              <item name="hibernate" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Ogloszenia.gg" type="b2602c69:ProjectViewProjectNode" />
@@ -237,9 +262,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -251,13 +273,14 @@
     <property name="add_unversioned_files" value="$PROJECT_DIR$/.classpath&#10;C:/Users/RENT/Desktop/Projekt SpaceShop/ogloszenia-projekt/.gitignore" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\RENT\Desktop\Projekt SpaceShop\ogloszenia-projekt\WebContent\WEB-INF\lib" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\RENT\Desktop\Projekt SpaceShop\ogloszenia-projekt\WebContent\WEB-INF" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\RENT\Desktop\Projekt SpaceShop\ogloszenia-projekt\WebContent\WEB-INF\lib" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -393,6 +416,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -406,7 +430,9 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22768533" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23903178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -419,7 +445,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -433,86 +458,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ogloszenia/repository/ImageRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="26" column="28" lean-forward="true" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ogloszenia/model/Advertisement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="14" lean-forward="false" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-          <folding>
-            <marker date="1501775556436" expanded="true" signature="1326:1512" ph="@{...}" />
-            <marker date="1501775556436" expanded="true" signature="1786:1793" ph="{}" />
-            <marker date="1501775556436" expanded="true" signature="1900:2307" ph="{...}" />
-            <marker date="1501775556436" expanded="false" signature="2335:2346" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2356:2362" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="2397:2408" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2421:2427" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="2457:2468" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2481:2487" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="2527:2538" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2557:2563" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="2591:2602" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2613:2619" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="2655:2666" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2681:2687" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="2715:2726" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2783:2794" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2813:2819" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="2853:2864" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2877:2883" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="2927:2938" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2957:2963" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="2992:3003" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3059:3070" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3087:3093" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3129:3140" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3156:3162" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3211:3222" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3247:3253" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3287:3298" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3312:3318" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3363:3374" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3395:3401" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3435:3446" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3462:3468" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3513:3524" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3542:3548" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3581:3592" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3609:3615" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3660:3671" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3691:3697" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3730:3741" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3757:3763" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3809:3820" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3845:3851" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3883:3894" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3908:3914" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3957:3968" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3989:3995" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="4030:4041" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="4057:4063" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="4111:4122" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="4147:4153" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="4184:4195" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="4208:4214" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="4255:4266" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="4285:4291" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="4327:4338" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="4354:4360" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="4409:4420" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="4445:4451" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="4500:4511" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="4532:4538" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="4605:4616" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="4651:4657" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="4692:4703" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="4717:4723" ph=" }" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -543,75 +493,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <marker date="1501775556436" expanded="true" signature="1326:1512" ph="@{...}" />
-            <marker date="1501775556436" expanded="true" signature="1786:1793" ph="{}" />
-            <marker date="1501775556436" expanded="true" signature="1900:2307" ph="{...}" />
-            <marker date="1501775556436" expanded="false" signature="2335:2346" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2356:2362" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="2397:2408" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2421:2427" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="2457:2468" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2481:2487" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="2527:2538" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2557:2563" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="2591:2602" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2613:2619" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="2655:2666" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2681:2687" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="2715:2726" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2783:2794" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2813:2819" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="2853:2864" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2877:2883" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="2927:2938" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2957:2963" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="2992:3003" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3059:3070" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3087:3093" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3129:3140" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3156:3162" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3211:3222" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3247:3253" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3287:3298" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3312:3318" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3363:3374" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3395:3401" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3435:3446" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3462:3468" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3513:3524" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3542:3548" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3581:3592" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3609:3615" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3660:3671" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3691:3697" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3730:3741" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3757:3763" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3809:3820" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3845:3851" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3883:3894" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3908:3914" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3957:3968" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3989:3995" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="4030:4041" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="4057:4063" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="4111:4122" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="4147:4153" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="4184:4195" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="4208:4214" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="4255:4266" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="4285:4291" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="4327:4338" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="4354:4360" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="4409:4420" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="4445:4451" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="4500:4511" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="4532:4538" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="4605:4616" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="4651:4657" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="4692:4703" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="4717:4723" ph=" }" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -674,37 +556,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.classpath">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ogloszenia/AddNewAdServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="43" column="52" lean-forward="false" selection-start-line="43" selection-start-column="52" selection-end-line="43" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/function.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ogloszenia/RegisterUserServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -712,14 +563,6 @@
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="60" lean-forward="false" selection-start-line="15" selection-start-column="60" selection-end-line="15" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -731,35 +574,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/index.html" />
-    <entry file="file://$PROJECT_DIR$/WebContent/dodawanie-ogloszenia.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="76" column="66" lean-forward="false" selection-start-line="76" selection-start-column="66" selection-end-line="76" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/chat.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/add-new-user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="70" column="36" lean-forward="true" selection-start-line="70" selection-start-column="36" selection-end-line="70" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/target/Ogloszenia.gg-0.0.1-SNAPSHOT/function.js" />
-    <entry file="file://$PROJECT_DIR$/src/ogloszenia/repository/ImageRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-204">
-          <caret line="26" column="28" lean-forward="false" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ogloszenia/model/Image.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -772,44 +587,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ogloszenia/repository/ConversationMessageRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="44" lean-forward="false" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ogloszenia/repository/ConversationRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="49" column="25" lean-forward="false" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ogloszenia/AddNewConversationMessageServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="38" column="39" lean-forward="false" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ogloszenia/AddNewConversationServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
-          <caret line="57" column="12" lean-forward="false" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ogloszenia/ArchiveAdServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="27" column="89" lean-forward="false" selection-start-line="27" selection-start-column="89" selection-end-line="27" selection-end-column="89" />
           <folding />
         </state>
       </provider>
@@ -831,109 +608,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ogloszenia/model/Advertisement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="68" column="12" lean-forward="false" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
-          <folding>
-            <marker date="1501775556436" expanded="true" signature="1326:1512" ph="@{...}" />
-            <marker date="1501775556436" expanded="true" signature="1786:1793" ph="{}" />
-            <marker date="1501775556436" expanded="true" signature="1900:2307" ph="{...}" />
-            <marker date="1501775556436" expanded="false" signature="2335:2346" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2356:2362" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="2397:2408" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2421:2427" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="2457:2468" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2481:2487" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="2527:2538" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2557:2563" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="2591:2602" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2613:2619" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="2655:2666" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2681:2687" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="2715:2726" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2783:2794" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2813:2819" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="2853:2864" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2877:2883" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="2927:2938" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="2957:2963" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="2992:3003" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3059:3070" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3087:3093" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3129:3140" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3156:3162" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3211:3222" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3247:3253" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3287:3298" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3312:3318" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3363:3374" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3395:3401" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3435:3446" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3462:3468" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3513:3524" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3542:3548" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3581:3592" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3609:3615" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3660:3671" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3691:3697" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3730:3741" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3757:3763" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3809:3820" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3845:3851" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3883:3894" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3908:3914" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="3957:3968" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="3989:3995" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="4030:4041" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="4057:4063" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="4111:4122" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="4147:4153" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="4184:4195" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="4208:4214" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="4255:4266" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="4285:4291" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="4327:4338" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="4354:4360" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="4409:4420" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="4445:4451" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="4500:4511" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="4532:4538" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="4605:4616" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="4651:4657" ph=" }" />
-            <marker date="1501775556436" expanded="false" signature="4692:4703" ph=" { " />
-            <marker date="1501775556436" expanded="false" signature="4717:4723" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ogloszenia/model/Conversation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="3" lean-forward="false" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ogloszenia/model/ConversationMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="116" lean-forward="true" selection-start-line="24" selection-start-column="116" selection-end-line="24" selection-end-column="116" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ogloszenia/repository/AdvertisementRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="135" column="87" lean-forward="false" selection-start-line="135" selection-start-column="87" selection-end-line="135" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ogloszenia/repository/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="31" column="50" lean-forward="false" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -945,60 +623,236 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ogloszenia/dto/CategoryDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ogloszenia/repository/CategoryRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="425">
+          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ogloszenia/dto/CategoryDTO.java">
+    <entry file="file://$PROJECT_DIR$/src/ogloszenia/model/Conversation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        <state relative-caret-position="1394">
+          <caret line="86" column="5" lean-forward="false" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
+          <folding>
+            <element signature="e#1031#1032#0" expanded="false" />
+            <element signature="e#1056#1057#0" expanded="false" />
+            <element signature="e#1093#1094#0" expanded="false" />
+            <element signature="e#1121#1122#0" expanded="false" />
+            <element signature="e#1170#1171#0" expanded="false" />
+            <element signature="e#1208#1209#0" expanded="false" />
+            <element signature="e#1277#1278#0" expanded="false" />
+            <element signature="e#1331#1332#0" expanded="false" />
+            <element signature="e#1374#1375#0" expanded="false" />
+            <element signature="e#1415#1416#0" expanded="false" />
+            <element signature="e#1476#1477#0" expanded="false" />
+            <element signature="e#1531#1532#0" expanded="false" />
+            <element signature="e#1576#1577#0" expanded="false" />
+            <element signature="e#1619#1620#0" expanded="false" />
+            <element signature="e#1684#1685#0" expanded="false" />
+            <element signature="e#1743#1744#0" expanded="false" />
+            <element signature="e#1785#1786#0" expanded="false" />
+            <element signature="e#1819#1820#0" expanded="false" />
+            <element signature="e#1876#1877#0" expanded="false" />
+            <element signature="e#1922#1923#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ogloszenia/ArchiveAdServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="27" column="89" lean-forward="false" selection-start-line="27" selection-start-column="89" selection-end-line="27" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ogloszenia/AddNewConversationServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="57" column="12" lean-forward="false" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ogloszenia/repository/ImageRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="26" column="28" lean-forward="false" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ogloszenia/repository/ConversationRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="49" column="25" lean-forward="false" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ogloszenia/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="25" lean-forward="false" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.classpath">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ogloszenia/AddNewConversationMessageServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="28" column="55" lean-forward="false" selection-start-line="28" selection-start-column="55" selection-end-line="28" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="54" column="12" lean-forward="false" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
+        <state relative-caret-position="442">
+          <caret line="26" column="20" lean-forward="true" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/index.jsp">
+    <entry file="file://$PROJECT_DIR$/src/hibernate.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/product.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="74" column="62" lean-forward="false" selection-start-line="74" selection-start-column="62" selection-end-line="74" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/products.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2176">
-          <caret line="128" column="7" lean-forward="false" selection-start-line="128" selection-start-column="7" selection-end-line="128" selection-end-column="7" />
+        <state relative-caret-position="289">
+          <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="45" column="62" lean-forward="true" selection-start-line="45" selection-start-column="62" selection-end-line="45" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ogloszenia/repository/ConversationMessageRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="28" column="48" lean-forward="true" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ogloszenia/repository/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="60" lean-forward="true" selection-start-line="13" selection-start-column="60" selection-end-line="13" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/chat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/add-new-user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="70" column="36" lean-forward="false" selection-start-line="70" selection-start-column="36" selection-end-line="70" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/product.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="62" lean-forward="false" selection-start-line="0" selection-start-column="62" selection-end-line="0" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/products.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ogloszenia/model/ConversationMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="3" column="27" lean-forward="true" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/function.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/dodawanie-ogloszenia.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="23" lean-forward="false" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ogloszenia/model/Advertisement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="80" column="100" lean-forward="false" selection-start-line="80" selection-start-column="100" selection-end-line="80" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ogloszenia/AddNewAdServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="46" lean-forward="true" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+          <caret line="23" column="33" lean-forward="false" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
           <folding />
         </state>
       </provider>

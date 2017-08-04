@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page
 	import="ogloszenia.repository.*,java.util.List,ogloszenia.model.*"%>
@@ -56,7 +56,7 @@
                                 <input type="text" placeholder="wpisz miejscowość" name="location" class="form-control" />
                             </div>
                             <div class="form-group row col-md-2">
-                                <button type="submit" class="btn btn-classic">szukaj</button>
+                                <button type="submit" class="btn btn-classic">Szukaj</button>
                             </div>
                         </form>
                     </div>

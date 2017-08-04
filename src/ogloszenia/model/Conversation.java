@@ -27,18 +27,23 @@ public class Conversation {
     private Advertisement advertisementId;
 
     @JoinColumn(nullable=false)
-    @ManyToOne
+    @ManyToOne(cascade=CascadeType.ALL)
     private User conversationSender;
 
     @JoinColumn(nullable=false)
-    @ManyToOne
+    @ManyToOne(cascade=CascadeType.ALL)
     private User conversationReceiver;
 
-    @OneToMany(mappedBy = "conversation")
-    private Set<ConversationMessage> conversationMessage;
+
+    @OneToMany(mappedBy="conversation")
+    Set<ConversationMessage> conversationMessage;
 
     @Column(nullable=false)
     private LocalDate messageDate;
+
+
+    public Conversation() {
+    }
 
     public Integer getId() {
         return id;
@@ -60,25 +65,18 @@ public class Conversation {
         return conversationSender;
     }
 
-    public void setConversationSender(User conversationSender) {
-        this.conversationSender = conversationSender;
+    public void setConversationSender(User messageSender) {
+        this.conversationSender = messageSender;
     }
 
     public User getConversationReceiver() {
         return conversationReceiver;
     }
 
-    public void setConversationReceiver(User conversationReceiver) {
-        this.conversationReceiver = conversationReceiver;
+    public void setConversationReceiver(User messageReceiver) {
+        this.conversationReceiver = messageReceiver;
     }
 
-    public Set<ConversationMessage> getConversationMessage() {
-        return conversationMessage;
-    }
-
-    public void setConversationMessage(Set<ConversationMessage> conversationMessage) {
-        this.conversationMessage = conversationMessage;
-    }
 
     public LocalDate getMessageDate() {
         return messageDate;

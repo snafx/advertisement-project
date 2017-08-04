@@ -1,6 +1,7 @@
 package ogloszenia;
 
 import ogloszenia.model.Advertisement;
+import ogloszenia.model.CATEGORY;
 import ogloszenia.model.User;
 import ogloszenia.repository.AdvertisementRepository;
 
@@ -20,10 +21,12 @@ public class AddNewAdServlet extends HttpServlet {
         BigDecimal price = BigDecimal.ZERO;
         String description;
         String location;
+        CATEGORY category = null;
 
         title = req.getParameter("title");
         try {
             price = new BigDecimal(req.getParameter("price"));
+            category = CATEGORY.valueOf(req.getParameter("category"));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -41,12 +44,10 @@ public class AddNewAdServlet extends HttpServlet {
         owner.setNick("test");
         owner.setPassword("admin");
 
-        Advertisement ad = new Advertisement(title, price, description, location, owner);
+        Advertisement ad = new Advertisement(title, price, description, location, owner, category);
         AdvertisementRepository.persist(ad);
 
-        resp.sendRedirect("products.html");
-//        PrintWriter pw = resp.getWriter();
-//        pw.write("ok");
+        resp.sendRedirect("products.jsp?category="+ad.getCategory());
 
     }
 

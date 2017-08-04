@@ -1,6 +1,7 @@
 package ogloszenia.model;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 public class ConversationMessage {
@@ -30,12 +31,42 @@ public class ConversationMessage {
     @JoinColumn
     private User owner; //author wiadomosci
 
+    @Column(nullable = false)
+    LocalDate createDate;
+
     public ConversationMessage() {
+
     }
 
     public ConversationMessage(String messageContent, Conversation conversation, User owner) {
+
         this.messageContent = messageContent;
         this.conversation = conversation;
+        this.owner = owner;
+        this.createDate = LocalDate.now();
+    }
+
+    public LocalDate getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(LocalDate createDate) {
+        this.createDate = createDate;
+    }
+
+    public Conversation getConversation() {
+        return conversation;
+    }
+
+    public void setConversation(Conversation conversation) {
+        this.conversation = conversation;
+    }
+
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
         this.owner = owner;
     }
 
@@ -55,19 +86,4 @@ public class ConversationMessage {
         this.messageContent = messageContent;
     }
 
-    public Conversation getConversation() {
-        return conversation;
-    }
-
-    public void setConversation(Conversation conversation) {
-        this.conversation = conversation;
-    }
-
-    public User getOwner() {
-        return owner;
-    }
-
-    public void setOwner(User owner) {
-        this.owner = owner;
-    }
 }

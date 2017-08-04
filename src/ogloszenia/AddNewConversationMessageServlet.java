@@ -5,6 +5,7 @@ import ogloszenia.model.ConversationMessage;
 import ogloszenia.model.User;
 import ogloszenia.repository.ConversationMessageRepository;
 import ogloszenia.repository.ConversationRepository;
+import ogloszenia.repository.UserRepository;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -22,24 +23,25 @@ public class AddNewConversationMessageServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String text = "";
         Integer conversationId = 0;
+        String text = "";
+        User messageSender = null;
+        Optional<User> messageSendeOptional = UserRepository.findByEmail("romek@gmail.com");
+        if (messageSendeOptional.isPresent()) {
+            messageSender = messageSendeOptional.get();
+        } else {
+            messageSender = new User("Romek", "11111", "romek@gmail.com", "Poznan");
+        }
 
-
-        //tymczasowi uzytkownik bedacy autorem wiadomosci
-        User messageSender = new User("Kazio", "pass", "kazio@gmail.com", "Poznan");
-
-        //pobranie zmiennych z formularza
         try {
             conversationId = Integer.valueOf(req.getParameter("conversationId"));
         } catch (Exception e) {
             e.printStackTrace();
         }
         text = req.getParameter("message");
-        //pobieramy konwersacje (proba)
-        Optional<Conversation> conversationTmp = ConversationRepository.findById(conversationId);
 
-        //jesli obiekt istnieje (czyli ze z formularza przyszlo poprawne id, oraz takie, ktore istnieje w bazie) to moge dzialac dalej
+        // pobieramy konwrsacje
+        Optional<Conversation> conversationTmp = ConversationRepository.findById(conversationId);
         if (conversationTmp.isPresent()) {
             Conversation conversation = conversationTmp.get();
 
@@ -47,7 +49,9 @@ public class AddNewConversationMessageServlet extends HttpServlet {
 
             ConversationMessageRepository.persist(newMessage);
 
-            resp.getWriter().write("Wiadomość wysłana!");
+            resp.getWriter().write("wiadomosc zostala wyslana");
+
         }
+
     }
 }

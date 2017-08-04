@@ -1,3 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %> <!-- zaciagamy biblioteke jstl -->
+<%@ page import="ogloszenia.repository.*,java.util.List,ogloszenia.model.*" %>
+<%@ page import="ogloszenia.model.dto.CategoryDTO" %>
+<!-- importujemy to co potrzebujemy, nie trzeba servletow -->
+
+<%
+   List<CategoryDTO> allCategories = CategoryRepository.findAll();
+   pageContext.setAttribute("allCategories", allCategories);
+%>
+
 <!DOCTYPE html>
 
 <head>
@@ -76,6 +87,15 @@
                 <textarea class="form-control" name="description" required></textarea>
                 <input class="form-control" name="img" type="file"/>
             </div>
+            <div class="form-group">
+                <label>Kategoria</label>
+                <select name="category" class="form-control" required>
+                <c:forEach item="${categoryList}" var="categoryDTO"
+                <option value="${categoryDTO.category}">${categoryDTO.name}</option>
+                </c:forEach>
+                </select>
+
+
             <div class="form-group">
                 <button type="submit" class="btn btn-classic">Wyślij</button>
             </div>

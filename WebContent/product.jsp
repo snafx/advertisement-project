@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page
 	import="ogloszenia.repository.*,java.util.List,ogloszenia.model.*,java.util.Optional"%>
@@ -18,6 +18,7 @@
 <!DOCTYPE html>
 
 <head>
+    <meta charset="utf-8">
     <title>Serwis z ogloszeniami</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -105,7 +106,7 @@
             <form action="add-new-conv" method="post">
             <input type="hidden" name="idAdvertisement" value="${ad.id}"/>
             <textarea name="message" class="form-control" rows="6" required="required"></textarea>
-            <button class="btn btn-classic" type="submit">Wyślij</button>
+            <button class="btn btn-classic" type="submit">Wyślij</button>
             </form>
             </div>
 

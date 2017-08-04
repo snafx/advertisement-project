@@ -25,9 +25,9 @@ public class CategoryRepository {
     //pobrac nazwe kategorii na podstawie enuma
     //pobierzemy i utworzymy obiekt CategoryDTO
     public static CategoryDTO findByCategory(CATEGORY category) {
-        return findAll().stream()
-                .filter(e -> e.getCategory().equals(category))
-                .findFirst()
-                .get(); //bo optional
+
+        return findAll().stream().
+                filter(e -> e.getCategory().equals(category)).
+                findFirst().get();
     }
 }

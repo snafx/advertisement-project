@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page
 	import="ogloszenia.repository.*,java.util.List,ogloszenia.model.*"%>
@@ -15,6 +15,7 @@
 	var="adList" />
 
 <head>
+<meta charset="utf-8">
 <title>Serwis z ogloszeniami</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -51,15 +52,15 @@
 		<div>
 			<form action="/search" method="post">
 				<div class="form-group row col-md-5">
-					<input type="text" placeholder="wpisz nazwÄ" name="phrase"
+					<input type="text" placeholder="wpisz nazwę" name="phrase"
 						class="form-control" />
 				</div>
 				<div class="form-group row col-md-5">
-					<input type="text" placeholder="wpisz miejscowoÅÄ"
+					<input type="text" placeholder="wpisz miejscowość"
 						name="location" class="form-control" />
 				</div>
 				<div class="form-group row col-md-2">
-					<button type="submit" class="btn btn-classic">szukaj</button>
+					<button type="submit" class="btn btn-classic">Szukaj</button>
 				</div>
 			</form>
 		</div>
@@ -76,8 +77,8 @@
 			</div>
 			<div class="col-md-8">
 				<select class="form-control">
-					<option value="1">cena malejaco</option>
-					<option value="2">cena rosnÄco</option>
+					<option value="1">cena malejąco</option>
+					<option value="2">cena rosnąco</option>
 					<option value="3">data: od najstarszych</option>
 					<option value="4">data: od najnowszych</option>
 				</select>
@@ -101,7 +102,7 @@
 				<div class="media-body">
 					<h4 class="media-heading"><a href="product.jsp?advertisementId=${ad.id}">${ad.title}</a></h4>
 					${ad.text}
-					<h3 class="price">${ad.price} zł</h3>
+					<h3 class="price">${ad.price} zł</h3>
 				</div>
 			</div>
 		</c:forEach>
@@ -112,7 +113,7 @@
 	<footer>
 		<div class="container footer form-inline">
 			<div class="col-md-3">
-				<a href="#">Strona gÅÃ³wna</a>
+				<a href="#">Strona główna</a>
 			</div>
 			<div class="col-md-3">
 				<a href="#">Profil</a>

@@ -1,5 +1,7 @@
 package ogloszenia.model;
 
+import ogloszenia.repository.UserRepository;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Set;
@@ -71,14 +73,14 @@ public class Advertisement {
     public Advertisement() {
     }
 
-    public Advertisement(String title, BigDecimal price, String description, String location, User user) {
+    public Advertisement(String title, BigDecimal price, String description, String location, Integer userId, CATEGORY category) {
         this.title = title;
         this.text = description;
         this.price = price;
         this.cityName = location;
-        this.owner = user;
+        this.owner = UserRepository.findById(userId).get(); //bedziemy mogli dodawac wiecej ogloszen
 
-        this.category = CATEGORY.MOTORYZACJA;
+        this.category = category;
         this.isPremium = false;
         this.isActive = true;
         this.views = 0;
