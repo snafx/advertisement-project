@@ -4,7 +4,7 @@
 }
 
 
-/* Icon 1 */
+/* Style dla hambuerger menu */
 
 #nav-icon1,
 #nav-icon2,
@@ -79,61 +79,78 @@
     transform: rotate(-135deg);
 }
 
+
+/* nasze style */
+
+.ad {
+    margin-top: 20px;
+    /* margines od góry dla kontenera z contentem */
+}
+
 .category-item {
-    color: grey;
+    color: gray;
+    /* lekko szary kolor czcionek poszczegolnych kategorii */
 }
 
 .small-object {
     max-width: 170px;
     max-height: 170px;
-}
-
-.panel {
-    margin: 10px 0px;
-    cursor: pointer;
-    padding: 5px;
-}
-
-.panel:hover {
-    background: #c1c1c1;
-    transition: .5s;
-}
-
-.ad {
-    margin-top: 20px;
+    /* maxymalne wymiary miniatury zdjecia przy ogloszeniu */
 }
 
 .price:hover {
-    color: rebeccapurple;
+    color: orangered;
+    /* zmiana koloru ceny po najechaniu myszka */
+}
+
+.panel {
+    margin: 10px 0;
     cursor: pointer;
+    padding: 8px;
+    /* pole z pojedynczym ogloszeniem: margines od gory, padding z kazdej strony, zmiana kursora */
+}
+
+.panel:hover {
+    background: #c3c3c3;
+    transition: 0.5s;
+    /* pole z pojedynczym ogloszeniem: zmiana backgroundu po najechaniu myszka, plus polsekundowa animacja tej zmiany */
 }
 
 .footer>div {
     text-align: center;
+    /* wysrodkowanie tesktu dla kazdego diva bedacego wewnatrz elementu o klasie footer */
+    /* u nas takim elementem jest pierwszy div znajdujacy sie wewnatrz znacznika footer */
 }
 
 .footer {
     padding: 10px;
-    color: white;
-    background-color: #c1c1c1;
+    background-color: steelblue;
+    margin-top: 10px;
+    /* padding i kolor tla dla elementu o klasie footer */
+    /* u nas takim elementem jest pierwszy div znajdujacy sie wewnatrz znacznika footer */
 }
 
 .footer a {
-    color: black;
-    font-size: 16px;
+    color: white;
+    /* kolor czcionki dla html-owych tagow "a" znajdujacych sie wewnatrz elementu o klasie footer */
+    /* u nas takim elementem jest pierwszy div znajdujacy sie wewnatrz znacznika footer */
 }
 
+.img-responsive {
+    /* margin: 0 auto; */
+    /* adpisanie boostrapowej klasy img-responsive, ktora powoduje, ze obrazek (htmlowy tag img) jest responsywny */
+    /* nadpisanie powoduje wysrodkowanie obrazka w divie, w ktorym sie on znajduje */
+}
 textarea[name=message] {
     resize: none;
-    margin: 9px 0;
+    margin: 10px 0;
 }
-
-.avatar {
+.avatar{
     max-height: 100px;
     max-width: 100px;
 }
 
-.ad-info {
+.ad-info{
     margin-top: 5px;
 }
 
@@ -143,23 +160,18 @@ textarea[name=message] {
 }
 
 .my-message {
-    background-color: skyblue !important;
+    background: skyblue !important;
 }
-
 .message-wrapper {
     max-height: 300px;
     overflow-y: scroll;
 }
-
-.message-wrapper>.panel {
+.message-wrapper .panel {
     width: 90%;
 }
-
-.message-wrapper>.other-message {
+.message-wrapper .other-message {
     float: right;
-    clear: right;
 }
-
 .sorting-label {
     line-height: 34px;
 }

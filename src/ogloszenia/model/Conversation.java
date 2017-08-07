@@ -24,14 +24,14 @@ public class Conversation {
 
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(nullable=false)
-    private Advertisement advertisementId;
+    private Advertisement advertisement;
 
     @JoinColumn(nullable=false)
-    @ManyToOne(cascade=CascadeType.ALL)
+    @ManyToOne    // (cascade=CascadeType.ALL)
     private User conversationSender;
 
     @JoinColumn(nullable=false)
-    @ManyToOne(cascade=CascadeType.ALL)
+    @ManyToOne    // (cascade=CascadeType.ALL)
     private User conversationReceiver;
 
 
@@ -53,30 +53,37 @@ public class Conversation {
         this.id = id;
     }
 
-    public Advertisement getAdvertisementId() {
-        return advertisementId;
+    public Advertisement getAdvertisement() {
+        return advertisement;
     }
 
-    public void setAdvertisementId(Advertisement advertisementId) {
-        this.advertisementId = advertisementId;
+    public void setAdvertisement(Advertisement advertisement) {
+        this.advertisement = advertisement;
     }
 
     public User getConversationSender() {
         return conversationSender;
     }
 
-    public void setConversationSender(User messageSender) {
-        this.conversationSender = messageSender;
+    public void setConversationSender(User conversationSender) {
+        this.conversationSender = conversationSender;
     }
 
     public User getConversationReceiver() {
         return conversationReceiver;
     }
 
-    public void setConversationReceiver(User messageReceiver) {
-        this.conversationReceiver = messageReceiver;
+    public void setConversationReceiver(User conversationReceiver) {
+        this.conversationReceiver = conversationReceiver;
     }
 
+    public Set<ConversationMessage> getConversationMessage() {
+        return conversationMessage;
+    }
+
+    public void setConversationMessage(Set<ConversationMessage> conversationMessage) {
+        this.conversationMessage = conversationMessage;
+    }
 
     public LocalDate getMessageDate() {
         return messageDate;

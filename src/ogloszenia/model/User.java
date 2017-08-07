@@ -38,18 +38,19 @@ public class User {
     @OneToMany(mappedBy="conversationReceiver")
     private Set<Conversation> receivedConversations;
 
-    @OneToMany(mappedBy = "owner")
+    @OneToMany(mappedBy = "author")
     private Set<ConversationMessage> conversationMessage;
 
     public User() {
     }
 
-    public User(String nick, String password, String email, String location) {
+    public User(String nick, String password, String email, String cityName) {
         this.nick = nick;
         this.password = password;
         this.email = email;
-        this.cityName = location;
+        this.cityName = cityName;
     }
+
 
     public Integer getId() {
         return id;

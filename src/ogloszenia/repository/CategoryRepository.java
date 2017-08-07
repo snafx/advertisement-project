@@ -16,7 +16,7 @@ public class CategoryRepository {
         List<CategoryDTO> categories = new ArrayList<>();
         categories.add(new CategoryDTO("Elektronika", "fa-gamepad", CATEGORY.ELEKTRONIKA));
         categories.add(new CategoryDTO("Motoryzacja", "fa-car", CATEGORY.MOTORYZACJA));
-
+        categories.add(new CategoryDTO("Nieruchomości", "fa-home", CATEGORY.NIERUCHOMOSCI));
 
         return categories;
     }
@@ -25,9 +25,9 @@ public class CategoryRepository {
     //pobrac nazwe kategorii na podstawie enuma
     //pobierzemy i utworzymy obiekt CategoryDTO
     public static CategoryDTO findByCategory(CATEGORY category) {
-
-        return findAll().stream().
-                filter(e -> e.getCategory().equals(category)).
-                findFirst().get();
+        return findAll().stream()
+                .filter(e -> e.getCategory().equals(category))
+                .findFirst()
+                .get(); //bo optional
     }
 }

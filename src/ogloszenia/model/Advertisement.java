@@ -36,7 +36,7 @@ public class Advertisement {
     private LocalDate dateFrom;
 
     @Column(nullable = false)
-    private LocalDate dataTo;
+    private LocalDate dateTo;
 
     @Column(nullable = false)
     private Boolean isActive;
@@ -64,29 +64,28 @@ public class Advertisement {
     )
     private Set<User> watchers;
 
-    @OneToMany(mappedBy = "advertisementId")  //zawsze trzeba wskazac mapowanie OneToMany
+    @OneToMany(mappedBy = "advertisement")  //zawsze trzeba wskazac mapowanie OneToMany
     private Set<Conversation> conversations;
 
-    @OneToMany(mappedBy = "advertisementId")
+    @OneToMany(mappedBy = "advertisement")
     private Set<Image> images;
 
     public Advertisement() {
     }
 
-    public Advertisement(String title, BigDecimal price, String description, String location, Integer userId, CATEGORY category) {
+    public Advertisement(String title, BigDecimal price, String description, String location, CATEGORY category) {
         this.title = title;
         this.text = description;
         this.price = price;
         this.cityName = location;
-        this.owner = UserRepository.findById(userId).get(); //bedziemy mogli dodawac wiecej ogloszen
 
         this.category = category;
         this.isPremium = false;
         this.isActive = true;
-        this.views = 0;
+        this.views = new Integer(0);
         this.dateFrom = LocalDate.now();
-        this.dataTo = this.dateFrom.plusMonths(1);
-        this.rating = 0;
+        this.dateTo = this.dateFrom.plusMonths(1);
+        this.rating = new Integer(0);
     }
 
     public Integer getId() {
@@ -145,12 +144,12 @@ public class Advertisement {
         this.dateFrom = dateFrom;
     }
 
-    public LocalDate getDataTo() {
-        return dataTo;
+    public LocalDate getDateTo() {
+        return dateTo;
     }
 
-    public void setDataTo(LocalDate dataTo) {
-        this.dataTo = dataTo;
+    public void setDateTo(LocalDate dateTo) {
+        this.dateTo = dateTo;
     }
 
     public Boolean getIsActive() {

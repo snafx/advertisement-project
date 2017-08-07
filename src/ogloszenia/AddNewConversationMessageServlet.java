@@ -19,39 +19,51 @@ import java.util.Optional;
  */
 
 public class AddNewConversationMessageServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        Integer userId = 0;
+        userId = (Integer) req.getSession().getAttribute("userId");
+
         Integer conversationId = 0;
         String text = "";
-        User messageSender = null;
-        Optional<User> messageSendeOptional = UserRepository.findByEmail("romek@gmail.com");
-        if (messageSendeOptional.isPresent()) {
-            messageSender = messageSendeOptional.get();
-        } else {
-            messageSender = new User("Romek", "11111", "romek@gmail.com", "Poznan");
-        }
 
-        try {
+        //tymczasowi uzytkownik bedacy autorem wiadomosci
+//        User messageSender = null;
+//        Optional<User> mesageSenderOptional = UserRepository.findByMail("romek@gmail.com");
+//        if (mesageSenderOptional.isPresent()) {
+//            messageSender = mesageSenderOptional.get();
+//        } else {
+//            messageSender = new User("Romek", "11111", "romek@gmail.com", "Poznan");
+//        }
+
+        //pobranie zmiennych z formularza
+        try {  //czy to jest potrzebne? conversationId ma chyba przychodzic z hidden inputa
             conversationId = Integer.valueOf(req.getParameter("conversationId"));
         } catch (Exception e) {
             e.printStackTrace();
         }
         text = req.getParameter("message");
 
-        // pobieramy konwrsacje
+        //proba pobrania konwersacji
         Optional<Conversation> conversationTmp = ConversationRepository.findById(conversationId);
+
+        //jesli obiekt istnieje (czyli ze z formularza przyszlo poprawne id, oraz takie, ktore istnieje w bazie) to moge dzialac dalej
         if (conversationTmp.isPresent()) {
             Conversation conversation = conversationTmp.get();
 
-            ConversationMessage newMessage = new ConversationMessage(text, conversation, messageSender);
+            ConversationMessage newMessage = new ConversationMessage(conversation, text);
 
-            ConversationMessageRepository.persist(newMessage);
+            Optional<ConversationMessage> conversationMessageOptional = ConversationMessageRepository.persist(newMessage, userId);
 
-            resp.getWriter().write("wiadomosc zostala wyslana");
+            if (conversationMessageOptional.isPresent()) {
+                resp.sendRedirect("czat.jsp?conversationId=" + conversationMessageOptional.get().getConversation().getId());
+            }
+
+            //resp.getWriter().write("wiadomosc zostala wyslana");
+
 
         }
-
     }
 }
+

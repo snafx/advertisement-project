@@ -23,15 +23,16 @@ public class RegisterUserServlet extends HttpServlet {
         email = req.getParameter("email");
         location = req.getParameter("location");
 
+        PrintWriter writer = resp.getWriter();
+
         if (isNotValid(nick, password, email, location)) {
-            PrintWriter pw = resp.getWriter();
-            pw.write("missing data");
+            writer.write("blad!");
         } else {
             User user = new User(nick, password, email, location);
             UserRepository.persist(user);
-            PrintWriter pw = resp.getWriter();
-            pw.write("user created");
+            writer.write("ok!");
         }
+
     }
 
     private boolean isNotValid(String nick, String password, String email, String location) {

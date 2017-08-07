@@ -19,18 +19,21 @@ public class ArchiveAdServlet extends HttpServlet {
         //try/catch jest gdyz czysto teoretycznie mogly ktos wyslac Stringa
         try {
             id = Integer.valueOf(req.getParameter("id"));
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException e) { //jesli zamiast integera przyjdzie np string
             e.printStackTrace();
         }
+
+
         if (id != null) {
             //optional, bo np mogl przyjsc takie id, ktorego nie ma w bazie
             //wtedy optional ladnie to opakuje w nulla bez wywalania bledu
             Optional<Advertisement> advertisement = AdvertisementRepository.findById(id);
 
             advertisement.ifPresent(a -> disableAd(a));
+
+            PrintWriter writer = resp.getWriter();
+            writer.write("ok!");
         }
-        PrintWriter pw = resp.getWriter();
-        pw.write("Ad archived!");
 
     }
 

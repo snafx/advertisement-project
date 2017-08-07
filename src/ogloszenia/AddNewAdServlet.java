@@ -23,6 +23,7 @@ public class AddNewAdServlet extends HttpServlet {
         String location;
         CATEGORY category = null;
 
+
         title = req.getParameter("title");
         try {
             price = new BigDecimal(req.getParameter("price"));
@@ -33,25 +34,27 @@ public class AddNewAdServlet extends HttpServlet {
         description = req.getParameter("description");
         location = req.getParameter("location");
 
-        if (isNotValid(title, price, description, location)) {
-            PrintWriter pw = resp.getWriter();
-            pw.write("blad");
+        if (isValid(title, price, description, location)) {
+            PrintWriter writer = resp.getWriter();
+            writer.write("blad!");
         }
 
-        User owner = new User();
-        owner.setCityName("Poznan");
-        owner.setEmail("test@gmail.com");
-        owner.setNick("test");
-        owner.setPassword("admin");
+//        User owner = new User();
+//        owner.setCityName("Poznań");
+//        owner.setEmail("example@com.pl");
+//        owner.setNick("testUser");
+//        owner.setPassword("admin");
 
-        Advertisement ad = new Advertisement(title, price, description, location, owner, category);
-        AdvertisementRepository.persist(ad);
+        Advertisement newAd = new Advertisement(title, price, description, location, category);
+        AdvertisementRepository.persist(newAd, 8);
 
-        resp.sendRedirect("products.jsp?category="+ad.getCategory());
+        resp.sendRedirect("products.jsp?category="+ newAd.getCategory());
 
+//        PrintWriter writer = resp.getWriter();
+//        writer.write("ok!");
     }
 
-    private boolean isNotValid(String title, BigDecimal price, String description, String location) {
+    private boolean isValid(String title, BigDecimal price, String description, String location) {
         return title.isEmpty() || description.isEmpty() || location.isEmpty() || price.compareTo(BigDecimal.ZERO) == -1;
     }
 }

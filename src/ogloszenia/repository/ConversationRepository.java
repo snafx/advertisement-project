@@ -13,12 +13,11 @@ public class ConversationRepository {
 
     public static Optional<Conversation> findById(Integer id) {
         Session session = null;
-        try {
-            session = HibernateUtil.openSession().getSession();
-            String hql = "SELECT e FROM Conversation e WHERE e.id=:id";
-            Query query = session.createQuery(hql);
+        try {session = HibernateUtil.openSession().getSession();
+            String hql = "SELECT e FROM Conversation e WHERE e.id = :id";
+            Query<Conversation> query = session.createQuery(hql, Conversation.class);
             query.setParameter("id", id);
-            return Optional.ofNullable((Conversation) query.getSingleResult());
+            return Optional.ofNullable(query.getSingleResult());
             //Optional opakowuje nam obiekt ktory moze byc nullem (informuje nas ze moze byc nullem, programisto sprawdz to)
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -33,11 +32,11 @@ public class ConversationRepository {
     public static List<Conversation> findByUserId(Integer id) {
         Session session = null;
         try {
-            session = HibernateUtil.openSession();
-            String hql = "SELECT e FROM Conversation e WHERE e.conversationSender.id=:id OR e.conversationReceiver.id=:id";
-            Query query = session.createQuery(hql);
+            session = HibernateUtil.openSession().getSession();
+            String hql = "SELECT e FROM Conversation e WHERE e.conversationSender.id = :id or e.conversationReceiver.id = :id";
+            Query<Conversation> query = session.createQuery(hql, Conversation.class);
             query.setParameter("id", id);
-            return query.getResultList();
+            return query.list();
         } catch (Exception ex) {
             ex.printStackTrace();
             session.getTransaction().rollback();
@@ -47,7 +46,7 @@ public class ConversationRepository {
         }
     }
 
-    //dodanie konwersacji
+    //dodanie konwesacji
     public static Integer persist(Conversation conversation) {
         Session session = null;
         try {

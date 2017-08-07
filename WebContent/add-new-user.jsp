@@ -1,13 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %> <!-- zaciagamy biblioteke jstl -->
 <%@ page import="ogloszenia.repository.*,java.util.List,ogloszenia.model.*" %>
-<%@ page import="ogloszenia.dto.CategoryDTO" %>
-<!-- importujemy to co potrzebujemy, nie trzeba servletow -->
-
-<%
-   List<CategoryDTO> allCategories = CategoryRepository.findAll();
-   pageContext.setAttribute("allCategories", allCategories);
-%>
 
 <!DOCTYPE html>
 
@@ -60,49 +53,35 @@
         </div>
     </div>
 
-    <!-- kategorie -->
-    <div class="container category">
-        <c:import url="category.jsp" />
-    </div>
-
     <!-- kontener z tytulem -->
     <div class="container category">
         <div class="col-md-6">
-            <h2>Dodaj nowe ogłoszenie</h2>
+            <h2>Dodaj nowego użytkownika</h2>
         </div>
     </div>
 
     <!-- kontener z contentem -->
     <div class="container ad">
 
-        <form action="/ad-new-ad" method="post">
+        <form action="/ad-new-user" method="post">
             <div class="form-group">
-                <label>Tytuł ogłoszenia</label>
-                <input class="form-control" name="title" type="text" required />
+                <label>Nick</label>
+                <input class="form-control" name="nick" type="text" required />
             </div>
             <div class="form-group">
-                <label>Cena</label>
-                <input class="form-control" name="price" type="number" min="0" step="0.01" required />
+                <label>email</label>
+                <input class="form-control" name="email" type="email" required />
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input class="form-control" name="password" type="password" required />
             </div>
             <div class="form-group">
                 <label>Lokalizacja</label>
                 <input class="form-control" name="location" type="text" required />
             </div>
             <div class="form-group">
-                <label>Opis</label>
-                <textarea class="form-control" name="description" required></textarea>
-                <input class="form-control" type="file" name="image" />
-            </div>
-            <div class="form-group">
-                <label>Kategoria</label>
-                <select name="category" class="form-control" required>
-                    <c:forEach items="${allCategories}" var="categoryDTO">
-                        <option value="${categoryDTO.category}">${categoryDTO.name}</option>
-                    </c:forEach>
-                </select>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-classic">Wyślij</button>
+                <button type="submit" class="btn btn-classic">Zarejestruj</button>
             </div>
         </form>
 

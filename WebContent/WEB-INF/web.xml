@@ -4,6 +4,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1" id="data-fabric-web-tool">
 
+
     <display-name>ogloszenia-projekt</display-name>
     <servlet>
         <servlet-name>addNewAdServlet</servlet-name>
@@ -13,13 +14,14 @@
         <servlet-name>addNewAdServlet</servlet-name>
         <url-pattern>/ad-new-ad</url-pattern>
     </servlet-mapping>
+
     <servlet>
         <servlet-name>registerUserServlet</servlet-name>
         <servlet-class>ogloszenia.RegisterUserServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>registerUserServlet</servlet-name>
-        <url-pattern>/reg-new-user</url-pattern>
+        <url-pattern>/ad-new-user</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -30,6 +32,7 @@
         <servlet-name>archiveAdServlet</servlet-name>
         <url-pattern>/archive-ad</url-pattern>
     </servlet-mapping>
+
     <servlet>
         <servlet-name>searchAdServlet</servlet-name>
         <servlet-class>ogloszenia.SearchAdServlet</servlet-class>
@@ -38,6 +41,7 @@
         <servlet-name>searchAdServlet</servlet-name>
         <url-pattern>/search-ad</url-pattern>
     </servlet-mapping>
+
     <servlet>
         <servlet-name>AddNewConversationServlet</servlet-name>
         <servlet-class>ogloszenia.AddNewConversationServlet</servlet-class>
@@ -46,4 +50,41 @@
         <servlet-name>AddNewConversationServlet</servlet-name>
         <url-pattern>/add-new-conv</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>addNewConversationMessageServlet</servlet-name>
+        <servlet-class>ogloszenia.AddNewConversationMessageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addNewConversationMessageServlet</servlet-name>
+        <url-pattern>/send-message</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>searchAdServlet</servlet-name>
+        <servlet-class>ogloszenia.SearchAdServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>searchAdServlet</servlet-name>
+        <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>loginServlet</servlet-name>
+        <servlet-class>ogloszenia.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>loginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>logoutServlet</servlet-name>
+        <servlet-class>ogloszenia.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>logoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
 </web-app>

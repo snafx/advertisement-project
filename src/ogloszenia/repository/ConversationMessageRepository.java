@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 import javax.persistence.Query;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 public class ConversationMessageRepository {
     final static Logger logger = Logger.getLogger(ConversationMessageRepository.class);
@@ -20,38 +21,52 @@ public class ConversationMessageRepository {
         try {
             session = HibernateUtil.openSession();
             session.getTransaction().begin();
-            conversationMessage.setOwner(UserRepository.findById(userId).get());
+
+            conversationMessage.setAuthor(UserRepository.findById(userId).get());
+
             session.persist(conversationMessage);
             session.getTransaction().commit();
+            logger.info("ddddddddd");
             return conversationMessage.getId();
         } catch (Exception ex) {
+            ex.printStackTrace();
             logger.error(ex);
             session.getTransaction().rollback();
             return 0;
         } finally {
             session.close();
         }
+
     }
 
-    public static Integer persist(ConversationMessage conversationMessage) {
+    //dodanie pojedynczej wiadomosci do bazy
+    public static Optional<ConversationMessage> persist(ConversationMessage conversationMessage, Integer userId) {
         Session session = null;
         try {
             session = HibernateUtil.openSession();
             session.getTransaction().begin();
-            if (!session.contains(conversationMessage.getConversation())) {
+
+            //sprawdzamy czy konewrsacja z argumentu funkcji juz istnieje w bazie, czy nie
+            if(! session.contains(conversationMessage.getConversation()) && conversationMessage.getConversation().getId()!= null ) {
+                //konwersacja juz istnieje
                 conversationMessage.setConversation((Conversation) session.merge(conversationMessage.getConversation()));
+            } else {
+                Conversation c=    conversationMessage.getConversation();
+                c.setConversationReceiver((User) session.merge(UserRepository.findById(c.getConversationReceiver().getId()).get()));
+                c.setConversationSender((User) session.merge(UserRepository.findById(c.getConversationSender().getId()).get()));
+                conversationMessage.setConversation(c);
             }
-            if (!session.contains(conversationMessage.getOwner())) {
-                conversationMessage.setOwner((User) session.merge(conversationMessage.getOwner()));
-            }
+
+            conversationMessage.setAuthor((User) session.merge(UserRepository.findById(userId).get()));
+
             session.persist(conversationMessage);
             session.getTransaction().commit();
-            logger.info("ddddddddd");
-            return conversationMessage.getId();
+            return Optional.ofNullable(conversationMessage);
         } catch (Exception ex) {
+            ex.printStackTrace();
             logger.error(ex);
             session.getTransaction().rollback();
-            return 0;
+            return Optional.empty();
         } finally {
             session.close();
         }
@@ -64,8 +79,8 @@ public class ConversationMessageRepository {
             session = HibernateUtil.openSession();
             String hql = "SELECT  e FROM ConversationMessage e WHERE e.conversation.id=:id";
             Query query = session.createQuery(hql);
-            query.setParameter("id", id);
-            return query.getResultList();
+            query.setParameter("id",id);
+            return  query.getResultList();
         } catch (Exception ex) {
             logger.error(ex);
             session.getTransaction().rollback();
@@ -74,6 +89,4 @@ public class ConversationMessageRepository {
             session.close();
         }
     }
-
-
 }
