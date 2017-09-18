@@ -1,4 +1,4 @@
-package ogloszenia.dto;
+package ogloszenia.model.dto;
 
 import ogloszenia.model.CATEGORY;
 
@@ -36,4 +36,5 @@ public class CategoryDTO {
     public void setCategory(CATEGORY category) {
         this.category = category;
     }
+
 }

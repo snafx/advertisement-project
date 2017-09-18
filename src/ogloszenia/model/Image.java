@@ -10,15 +10,12 @@ public class Image {
     @Column(unique = true)
     private Integer id;
 
-    @ManyToOne //wiele zdjec do jednego ogloszenia
+    @ManyToOne
     @JoinColumn(nullable = false)
     private Advertisement advertisement;
 
     @Lob
     private byte[] img;
-
-    public Image() {
-    }
 
     public Integer getId() {
         return id;
@@ -43,4 +40,9 @@ public class Image {
     public void setImg(byte[] img) {
         this.img = img;
     }
+
+    public Image() {
+    }
+
+
 }

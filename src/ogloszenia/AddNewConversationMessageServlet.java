@@ -2,10 +2,8 @@ package ogloszenia;
 
 import ogloszenia.model.Conversation;
 import ogloszenia.model.ConversationMessage;
-import ogloszenia.model.User;
 import ogloszenia.repository.ConversationMessageRepository;
 import ogloszenia.repository.ConversationRepository;
-import ogloszenia.repository.UserRepository;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,12 +13,16 @@ import java.io.IOException;
 import java.util.Optional;
 
 /**
- * servlet, ktory zapisuje nowa wiadomosc do istniejacej juz konwersacji
+ * Servlet implementation class AddNewConversationMessageServlet
  */
-
 public class AddNewConversationMessageServlet extends HttpServlet {
-    @Override
-    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    private static final long serialVersionUID = 1L;
+
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+     * response)
+     */
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         Integer userId = 0;
         userId = (Integer) req.getSession().getAttribute("userId");
@@ -45,25 +47,19 @@ public class AddNewConversationMessageServlet extends HttpServlet {
         }
         text = req.getParameter("message");
 
-        //proba pobrania konwersacji
+        // pobieramy (próba) konwrsacje
         Optional<Conversation> conversationTmp = ConversationRepository.findById(conversationId);
 
         //jesli obiekt istnieje (czyli ze z formularza przyszlo poprawne id, oraz takie, ktore istnieje w bazie) to moge dzialac dalej
         if (conversationTmp.isPresent()) {
             Conversation conversation = conversationTmp.get();
-
-            ConversationMessage newMessage = new ConversationMessage(conversation, text);
-
+            ConversationMessage newMessage = new ConversationMessage(text, conversation);
             Optional<ConversationMessage> conversationMessageOptional = ConversationMessageRepository.persist(newMessage, userId);
 
-            if (conversationMessageOptional.isPresent()) {
+            if (conversationMessageOptional.isPresent())
                 resp.sendRedirect("czat.jsp?conversationId=" + conversationMessageOptional.get().getConversation().getId());
-            }
 
             //resp.getWriter().write("wiadomosc zostala wyslana");
-
-
         }
     }
 }
-

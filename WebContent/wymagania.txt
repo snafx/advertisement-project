@@ -1,0 +1,68 @@
+Funkcjonalnosci:
+
+1.
+Dodawanie ogłoszeń , promowanie ogłoszeń
+Przegladanie ogłoszeń po kategorii
+    Sortowanie po dacie
+    Sortowanie po cenie
+Edycja ogloszeń
+Wyszukiwarka po nazwie / tresci
+Wyszukiwanie po lokalizacji    
+Widok ogloszenia
+
+2.
+Przegladanie wlasnych zakonczonych ogloszen
+Przegladanie ogloszen uzytkownika
+Wykorzystanie bazy danych + Hibernate(mysql)
+Wysylanie maili
+
+3. Bajery
+Komunikator
+Scheduler do wylaczanie ogloszen po czasie
+Google maps
+
+
+Encje
+
+Oglosznie:
+    tytul
+    zdjecie
+    wlasciciel
+    cena
+    tresc
+    data od
+    data do
+    czy aktywne
+    czy premium
+    city name
+    ocena od osoby kupujacej
+    kategoria
+    liczba wyswietlen
+    
+Zdjecie
+    id ogloszenia
+    zdjecie
+    
+Kategoria
+    id 
+    nazwa
+    
+Uzytkownik
+    email
+    haslo
+    nick
+    avatar
+    city name
+    
+Wiadomosc
+    id ogloszenia
+    id nadawca
+    id odbiorca
+    tresc
+    data
+
+Obserwoane ogloszenia
+    id ogloszenia
+    id uzytkownika
+    
+    

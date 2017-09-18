@@ -7,48 +7,48 @@ import java.util.Set;
 public class User {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(unique=true)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true)
+    Integer id;
 
-    @Column(nullable=false,unique=true)
-    private String nick;
+    @Column(nullable = false, unique = true)
+    String nick;
 
-    @Column(nullable=false)
-    private String password;
+    @Column(nullable = false)
+    String password;
 
     @Lob
-    private byte[] avatar;
+    byte[] avatar;
 
-    @Column(nullable=false)
-    private String email;
+    @Column(nullable = false)
+    String email;
 
-    @Column(nullable=false)
-    private String cityName;
+    @Column(nullable = false)
+    String cityName;
 
     @ManyToMany(mappedBy = "watchers")
-    private Set<Advertisement> followedAdvertisements;
+    Set<Advertisement> followedAdvertisemets;
 
-    @OneToMany(mappedBy = "owner") //tutaj jest zawsze nazwa pola ktora powiazuje
-    private Set<Advertisement> ads;
+    @OneToMany(mappedBy = "owner")
+    Set<Advertisement> ads;
 
-    @OneToMany(mappedBy="conversationSender")
-    private Set<Conversation> sendConversations;
+    @OneToMany(mappedBy = "conversationSender")
+    Set<Conversation> sendMessages;
 
-    @OneToMany(mappedBy="conversationReceiver")
-    private Set<Conversation> receivedConversations;
+    @OneToMany(mappedBy = "conversationReceiver")
+    Set<Conversation> receivedMessages;
 
-    @OneToMany(mappedBy = "author")
-    private Set<ConversationMessage> conversationMessage;
+    @OneToMany(mappedBy = "owner")
+    Set<ConversationMessage> conversationMessage;
 
     public User() {
     }
 
-    public User(String nick, String password, String email, String cityName) {
+    public User(String nick, String password, String email, String location) {
         this.nick = nick;
         this.password = password;
         this.email = email;
-        this.cityName = cityName;
+        this.cityName = location;
     }
 
 
@@ -98,45 +98,5 @@ public class User {
 
     public void setCityName(String cityName) {
         this.cityName = cityName;
-    }
-
-    public Set<Advertisement> getFollowedAdvertisements() {
-        return followedAdvertisements;
-    }
-
-    public void setFollowedAdvertisements(Set<Advertisement> followedAdvertisements) {
-        this.followedAdvertisements = followedAdvertisements;
-    }
-
-    public Set<Advertisement> getAds() {
-        return ads;
-    }
-
-    public void setAds(Set<Advertisement> ads) {
-        this.ads = ads;
-    }
-
-    public Set<Conversation> getSendConversations() {
-        return sendConversations;
-    }
-
-    public void setSendConversations(Set<Conversation> sendConversations) {
-        this.sendConversations = sendConversations;
-    }
-
-    public Set<Conversation> getReceivedConversations() {
-        return receivedConversations;
-    }
-
-    public void setReceivedConversations(Set<Conversation> receivedConversations) {
-        this.receivedConversations = receivedConversations;
-    }
-
-    public Set<ConversationMessage> getConversationMessage() {
-        return conversationMessage;
-    }
-
-    public void setConversationMessage(Set<ConversationMessage> conversationMessage) {
-        this.conversationMessage = conversationMessage;
     }
 }

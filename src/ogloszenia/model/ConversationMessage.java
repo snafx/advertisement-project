@@ -6,42 +6,57 @@ import java.time.LocalDate;
 @Entity
 public class ConversationMessage {
 
-    /**
-     * Wiadomość - pojedyncza wiadomosc przypisana o danej konwersacji
-     * id
-     * id konwersacji (caly obiekt)
-     * text
-     * autor (autorem bedzie albo nadawca konwersacji albo odbiorca konwesacji: jedna z tym dwoch osob)
-     */
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true)
     private Integer id;
 
-    @Column(nullable=false)
+    @Column(nullable = false)
     private String messageContent;
 
     //jesli przy dodawaniu nowej wiadomosci konwersacja nie bedzie istniala, to najpierw ja doda, a dopiero potem doda wiadomosc
-    @ManyToOne(cascade = CascadeType.ALL) //dodaje nam kaskadowo do bazy, najpierw conversation, potem converMeasage
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn
-    private Conversation conversation;
+    Conversation conversation;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn
-    private User author; //author wiadomosci
+    User owner;
 
     @Column(nullable = false)
     LocalDate createDate;
 
     public ConversationMessage() {
-
     }
 
-    public ConversationMessage(Conversation conversation, String messageContent) {
-        this.conversation = conversation;
+    public ConversationMessage(String messageContent, Conversation conversation) {
         this.messageContent = messageContent;
+        this.conversation = conversation;
         this.createDate = LocalDate.now();
+    }
+
+    public LocalDate getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(LocalDate createDate) {
+        this.createDate = createDate;
+    }
+
+    public Conversation getConversation() {
+        return conversation;
+    }
+
+    public void setConversation(Conversation conversation) {
+        this.conversation = conversation;
+    }
+
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
+        this.owner = owner;
     }
 
     public Integer getId() {
@@ -60,27 +75,4 @@ public class ConversationMessage {
         this.messageContent = messageContent;
     }
 
-    public Conversation getConversation() {
-        return conversation;
-    }
-
-    public void setConversation(Conversation conversation) {
-        this.conversation = conversation;
-    }
-
-    public User getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(User author) {
-        this.author = author;
-    }
-
-    public LocalDate getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(LocalDate createDate) {
-        this.createDate = createDate;
-    }
 }

@@ -10,25 +10,30 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Optional;
 
+/**
+ * Servlet implementation class LoginServlet
+ */
+
 public class LoginServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email;
         String password;
 
-        email = req.getParameter("email");
-        password = req.getParameter("password");
+        email = request.getParameter("email");
+        password = request.getParameter("password");
 
-        Optional<User> user = UserRepository.findByMailAndPassword(email, password);
+        Optional<User> user = UserRepository.findByEmailAndPassword(email, password);
 
         if (user.isPresent()) {
-            req.getSession().setAttribute("userId", user.get().getId());
-            resp.sendRedirect("index.jsp");
+            request.getSession().setAttribute("userId", user.get().getId());
+            response.sendRedirect("index.jsp");
         } else {
-            resp.getWriter().write("Zly login lub haslo.");
+            response.getWriter().write("Zly login lub haslo");
         }
-
     }
 }

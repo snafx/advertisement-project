@@ -3,8 +3,7 @@
     padding: 0;
 }
 
-
-/* Style dla hambuerger menu */
+/* Icon 1 */
 
 #nav-icon1,
 #nav-icon2,
@@ -79,78 +78,61 @@
     transform: rotate(-135deg);
 }
 
-
-/* nasze style */
-
-.ad {
-    margin-top: 20px;
-    /* margines od góry dla kontenera z contentem */
-}
-
 .category-item {
     color: gray;
-    /* lekko szary kolor czcionek poszczegolnych kategorii */
 }
 
 .small-object {
     max-width: 170px;
     max-height: 170px;
-    /* maxymalne wymiary miniatury zdjecia przy ogloszeniu */
-}
-
-.price:hover {
-    color: orangered;
-    /* zmiana koloru ceny po najechaniu myszka */
 }
 
 .panel {
     margin: 10px 0;
     cursor: pointer;
     padding: 8px;
-    /* pole z pojedynczym ogloszeniem: margines od gory, padding z kazdej strony, zmiana kursora */
+}
+
+.ad {
+    margin-top: 20px;
+}
+
+.price:hover {
+    color: rebeccapurple;
+    cursor: pointer;
 }
 
 .panel:hover {
     background: #c3c3c3;
     transition: 0.5s;
-    /* pole z pojedynczym ogloszeniem: zmiana backgroundu po najechaniu myszka, plus polsekundowa animacja tej zmiany */
 }
 
-.footer>div {
+.footer > div {
     text-align: center;
-    /* wysrodkowanie tesktu dla kazdego diva bedacego wewnatrz elementu o klasie footer */
-    /* u nas takim elementem jest pierwszy div znajdujacy sie wewnatrz znacznika footer */
 }
 
 .footer {
     padding: 10px;
-    background-color: steelblue;
     margin-top: 10px;
-    /* padding i kolor tla dla elementu o klasie footer */
-    /* u nas takim elementem jest pierwszy div znajdujacy sie wewnatrz znacznika footer */
+    color: white;
+    background-color: steelblue;
 }
 
 .footer a {
     color: white;
-    /* kolor czcionki dla html-owych tagow "a" znajdujacych sie wewnatrz elementu o klasie footer */
-    /* u nas takim elementem jest pierwszy div znajdujacy sie wewnatrz znacznika footer */
 }
 
-.img-responsive {
-    /* margin: 0 auto; */
-    /* adpisanie boostrapowej klasy img-responsive, ktora powoduje, ze obrazek (htmlowy tag img) jest responsywny */
-    /* nadpisanie powoduje wysrodkowanie obrazka w divie, w ktorym sie on znajduje */
-}
 textarea[name=message] {
     resize: none;
-    margin: 10px 0;
+    margin: 9px 0;
 }
-.avatar{
+
+.avatar {
     max-height: 100px;
     max-width: 100px;
 }
 
-.ad-info{
+.ad-info {
     margin-top: 5px;
 }
 
@@ -160,22 +142,80 @@ textarea[name=message] {
 }
 
 .my-message {
-    background: skyblue !important;
+    background-color: skyblue !important;
 }
+
 .message-wrapper {
     max-height: 300px;
     overflow-y: scroll;
 }
-.message-wrapper .panel {
+
+.message-wrapper > .panel {
     width: 90%;
 }
-.message-wrapper .other-message {
+
+.message-wrapper > .other-message {
     float: right;
+    clear: right;
 }
+
 .sorting-label {
     line-height: 34px;
 }
 
 .sorting-right {
     text-align: right;
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+#myInput {
+    border-box: box-sizing;
+    background-image: url('searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: #ddd
+}
+
+.show {
+    display: block;
 }

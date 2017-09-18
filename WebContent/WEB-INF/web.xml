@@ -4,14 +4,14 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1" id="data-fabric-web-tool">
 
+    <display-name>AdvertisementProject</display-name>
 
-    <display-name>ogloszenia-projekt</display-name>
     <servlet>
-        <servlet-name>addNewAdServlet</servlet-name>
+        <servlet-name>addNewServlet</servlet-name>
         <servlet-class>ogloszenia.AddNewAdServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>addNewAdServlet</servlet-name>
+        <servlet-name>addNewServlet</servlet-name>
         <url-pattern>/ad-new-ad</url-pattern>
     </servlet-mapping>
 
@@ -21,28 +21,11 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>registerUserServlet</servlet-name>
-        <url-pattern>/ad-new-user</url-pattern>
+        <url-pattern>/reg-new-user</url-pattern>
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>archiveAdServlet</servlet-name>
-        <servlet-class>ogloszenia.ArchiveAdServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>archiveAdServlet</servlet-name>
-        <url-pattern>/archive-ad</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>searchAdServlet</servlet-name>
-        <servlet-class>ogloszenia.SearchAdServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>searchAdServlet</servlet-name>
-        <url-pattern>/search-ad</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
+        <display-name>AddNewConversationServlet</display-name>
         <servlet-name>AddNewConversationServlet</servlet-name>
         <servlet-class>ogloszenia.AddNewConversationServlet</servlet-class>
     </servlet>
@@ -52,39 +35,43 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>addNewConversationMessageServlet</servlet-name>
+        <display-name>AddNewConversationMessageServlet</display-name>
+        <servlet-name>AddNewConversationMessageServlet</servlet-name>
         <servlet-class>ogloszenia.AddNewConversationMessageServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>addNewConversationMessageServlet</servlet-name>
+        <servlet-name>AddNewConversationMessageServlet</servlet-name>
         <url-pattern>/send-message</url-pattern>
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>searchAdServlet</servlet-name>
-        <servlet-class>ogloszenia.SearchAdServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>searchAdServlet</servlet-name>
-        <url-pattern>/search</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>loginServlet</servlet-name>
+        <display-name>LoginServlet</display-name>
+        <servlet-name>LoginServlet</servlet-name>
         <servlet-class>ogloszenia.LoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>loginServlet</servlet-name>
+        <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>logoutServlet</servlet-name>
+        <display-name>LogoutServlet</display-name>
+        <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>ogloszenia.LogoutServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>logoutServlet</servlet-name>
+        <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <display-name>SearchServlet</display-name>
+        <servlet-name>SearchServlet</servlet-name>
+        <servlet-class>ogloszenia.SearchAdServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchServlet</servlet-name>
+        <url-pattern>/search</url-pattern>
     </servlet-mapping>
 
 </web-app>

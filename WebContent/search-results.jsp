@@ -1,18 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page import="ogloszenia.model.CATEGORY,ogloszenia.repository.CategoryRepository" %>
+<%@ page import="ogloszenia.model.Advertisement,ogloszenia.repository.AdvertisementRepository,java.util.List" %>
 
-<!DOCTYPE html>
 <%
-    String categoryParam = request.getParameter("category");
-    CATEGORY category = CATEGORY.valueOf(categoryParam);
-    String categoryName = CategoryRepository.findByCategory(category).getName();
-    pageContext.setAttribute("category", category);
-    pageContext.setAttribute("categoryName", categoryName);
+    String phrase = request.getParameter("phrase");
+    String location = request.getParameter("location");
+    if (phrase.isEmpty()) {
+        pageContext.setAttribute("WARNING", "Proszę wypełnić szukaną frazę!!");
+    } else if (location == null || location.isEmpty()) {
+        List<Advertisement> ad = AdvertisementRepository.findByPhrase(phrase);
+        pageContext.setAttribute("searchedAds", ad);
+    } else {
+        List<Advertisement> ad = AdvertisementRepository.findByPhraseAndLocation(phrase, location);
+        pageContext.setAttribute("searchedAds", ad);
+    }
 %>
+
 <c:set value="${AdvertisementRepository.findByCategory(category)}"
        var="adList"/>
 
+<!DOCTYPE html>
 <head>
     <meta charset="utf-8">
     <title>Serwis z ogloszeniami</title>
@@ -48,10 +55,10 @@
     </div>
 </div>
 
+<!-- kategorie -->
 <div class="container category">
     <c:import url="category.jsp"/>
 </div>
-
 <div class="container category">
     <div class="col-md-7">
         <h2>${categoryName}</h2>
@@ -71,8 +78,10 @@
     </div>
 </div>
 
+<!-- kontener z contentem -->
 <div class="container ad">
-    <c:forEach items="${adList}" var="ad">
+    ${WARNING}
+    <c:forEach items="${searchedAds}" var="ad">
         <div class="media panel">
             <div class="media-left media-middle">
                 <a href="product.jsp?advertisementId=${ad.id}"> <img
@@ -86,7 +95,7 @@
                     <a href="product.jsp?advertisementId=${ad.id}">${ad.title}</a>
                 </h4>
                     ${ad.text}
-                <h3 class="price">${ad.price}zł</h3>
+                <h3 class="price">${ad.price} zł</h3>
             </div>
         </div>
     </c:forEach>

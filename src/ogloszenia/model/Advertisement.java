@@ -1,100 +1,100 @@
 package ogloszenia.model;
 
-import ogloszenia.repository.UserRepository;
-
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Set;
-
-import javax.persistence.*;
 
 @Entity
 public class Advertisement {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //bedzie autoinkrementacja
-    @Column(unique = true)  //jest to wartosc unikalna dla kolumny
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true)
+    Integer id;
 
     @Column(nullable = false)
-    private String title;
+    String title;
 
-    @Lob //tu bedzie odbierany strumien z "obrazkiem"
-    private byte[] img;
+    @Lob
+    byte[] img;
 
     @JoinColumn(nullable = false)
     @ManyToOne(cascade = CascadeType.ALL)
-    private User owner; //powiazanie z inna kolumna
+    User owner;
 
     @Column(nullable = false)
-    private BigDecimal price;
+    BigDecimal price;
 
     @Column(nullable = false)
-    private String text;
+    String text;
 
     @Column(nullable = false)
-    private LocalDate dateFrom;
+    LocalDate dateFrom;
 
     @Column(nullable = false)
-    private LocalDate dateTo;
+    LocalDate dateTo;
 
     @Column(nullable = false)
-    private Boolean isActive;
+    Boolean isActive;
 
     @Column(nullable = false)
-    private Boolean isPremium;
+    Boolean isPremium;
 
     @Column(nullable = false)
-    private String cityName;
+    String cityName;
 
     @Column(nullable = false)
-    private Integer rating;
+    Integer rating;
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING) /*w baazaie danych zostanie zapisany string z nazwa kategorii*/
-    private CATEGORY category;
+            CATEGORY category;
 
     @Column(nullable = false)
-    private Integer views;
+    Integer views;
 
     @ManyToMany
     @JoinTable(
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "watchers_id")
+            inverseJoinColumns = @JoinColumn(name = "watcher_id")
     )
-    private Set<User> watchers;
+    Set<User> watchers;
 
-    @OneToMany(mappedBy = "advertisement")  //zawsze trzeba wskazac mapowanie OneToMany
-    private Set<Conversation> conversations;
+    @OneToMany(mappedBy = "advertisementId")
+    Set<Conversation> messages;
 
     @OneToMany(mappedBy = "advertisement")
-    private Set<Image> images;
+    Set<Image> images;
 
     public Advertisement() {
     }
 
-    public Advertisement(String title, BigDecimal price, String description, String location, CATEGORY category) {
+    public Advertisement(String title, BigDecimal price, String description, String location, CATEGORY category, byte[] img) {
         this.title = title;
         this.text = description;
         this.price = price;
         this.cityName = location;
-
         this.category = category;
         this.isPremium = false;
         this.isActive = true;
-        this.views = new Integer(0);
+        this.views = 0;
         this.dateFrom = LocalDate.now();
         this.dateTo = this.dateFrom.plusMonths(1);
-        this.rating = new Integer(0);
+        this.rating = 0;
+        this.img = img;
+
     }
 
-    public Integer getId() {
-        return id;
+    public byte[] getImg() {
+        return img;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+
+    public void setImg(byte[] img) {
+        this.img = img;
     }
+
 
     public String getTitle() {
         return title;
@@ -102,22 +102,6 @@ public class Advertisement {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public byte[] getImg() {
-        return img;
-    }
-
-    public void setImg(byte[] img) {
-        this.img = img;
-    }
-
-    public User getOwner() {
-        return owner;
-    }
-
-    public void setOwner(User owner) {
-        this.owner = owner;
     }
 
     public BigDecimal getPrice() {
@@ -156,16 +140,16 @@ public class Advertisement {
         return isActive;
     }
 
-    public void setIsActive(Boolean active) {
-        isActive = active;
+    public void setIsActive(Boolean isActive) {
+        this.isActive = isActive;
     }
 
-    public Boolean getPremium() {
+    public Boolean getIsPremium() {
         return isPremium;
     }
 
-    public void setPremium(Boolean premium) {
-        isPremium = premium;
+    public void setIsPremium(Boolean isPremium) {
+        this.isPremium = isPremium;
     }
 
     public String getCityName() {
@@ -200,27 +184,21 @@ public class Advertisement {
         this.views = views;
     }
 
-    public Set<User> getWatchers() {
-        return watchers;
+    public Integer getId() {
+        return id;
     }
 
-    public void setWatchers(Set<User> watchers) {
-        this.watchers = watchers;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public Set<Conversation> getConversations() {
-        return conversations;
+    public User getOwner() {
+        return owner;
     }
 
-    public void setConversations(Set<Conversation> conversations) {
-        this.conversations = conversations;
+
+    public void setOwner(User owner) {
+        this.owner = owner;
     }
 
-    public Set<Image> getImages() {
-        return images;
-    }
-
-    public void setImages(Set<Image> images) {
-        this.images = images;
-    }
 }

@@ -2,7 +2,6 @@ package ogloszenia;
 
 import ogloszenia.model.Advertisement;
 import ogloszenia.model.CATEGORY;
-import ogloszenia.model.User;
 import ogloszenia.repository.AdvertisementRepository;
 
 import javax.servlet.ServletException;
@@ -17,44 +16,45 @@ public class AddNewAdServlet extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String title;
-        BigDecimal price = BigDecimal.ZERO;
-        String description;
-        String location;
-        CATEGORY category = null;
 
+        byte[] img = null;
 
-        title = req.getParameter("title");
-        try {
-            price = new BigDecimal(req.getParameter("price"));
-            category = CATEGORY.valueOf(req.getParameter("category"));
-        } catch (Exception e) {
-            e.printStackTrace();
+        Integer userId = 0;
+        userId = (Integer) req.getSession().getAttribute("userId");
+        if (userId == null) {
+            resp.sendRedirect("login.html");
+
+        } else {
+            String title = "";
+            BigDecimal price = BigDecimal.ZERO;
+            String description;
+            String location;
+            CATEGORY category = null;
+
+            try {
+                title = req.getParameter("title");
+                price = new BigDecimal(req.getParameter("price"));
+                category = CATEGORY.valueOf(req.getParameter("category"));
+                img = req.getParameter("img").getBytes();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            description = req.getParameter("description");
+            location = req.getParameter("location");
+
+            if (isNotValid(title, price, description, location)) {
+                PrintWriter pw = resp.getWriter();
+                pw.write("blad");  //TODO mozna by zrobic ładniejsze przekierowanie zamiast komunikatu
+            }
+
+            Advertisement ad = new Advertisement(title, price, description, location, category, img);
+            AdvertisementRepository.persist(ad, userId);
+            resp.sendRedirect("products.jsp?category=" + ad.getCategory());
         }
-        description = req.getParameter("description");
-        location = req.getParameter("location");
-
-        if (isValid(title, price, description, location)) {
-            PrintWriter writer = resp.getWriter();
-            writer.write("blad!");
-        }
-
-//        User owner = new User();
-//        owner.setCityName("Poznań");
-//        owner.setEmail("example@com.pl");
-//        owner.setNick("testUser");
-//        owner.setPassword("admin");
-
-        Advertisement newAd = new Advertisement(title, price, description, location, category);
-        AdvertisementRepository.persist(newAd, 8);
-
-        resp.sendRedirect("products.jsp?category="+ newAd.getCategory());
-
-//        PrintWriter writer = resp.getWriter();
-//        writer.write("ok!");
     }
 
-    private boolean isValid(String title, BigDecimal price, String description, String location) {
+    private boolean isNotValid(String title, BigDecimal price, String description, String location) {
         return title.isEmpty() || description.isEmpty() || location.isEmpty() || price.compareTo(BigDecimal.ZERO) == -1;
     }
 }

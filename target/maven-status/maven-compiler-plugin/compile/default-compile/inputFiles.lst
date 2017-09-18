@@ -1,21 +1,23 @@
-C:\Users\RENT\Desktop\Projekt SpaceShop\ogloszenia-projekt\src\ogloszenia\RegisterUserServlet.java
-C:\Users\RENT\Desktop\Projekt SpaceShop\ogloszenia-projekt\src\ogloszenia\repository\ConversationMessageRepository.java
-C:\Users\RENT\Desktop\Projekt SpaceShop\ogloszenia-projekt\src\ogloszeniar\hibernate\util\HibernateUtil.java
-C:\Users\RENT\Desktop\Projekt SpaceShop\ogloszenia-projekt\src\ogloszenia\model\ConversationMessage.java
-C:\Users\RENT\Desktop\Projekt SpaceShop\ogloszenia-projekt\src\ogloszenia\AddNewConversationMessageServlet.java
-C:\Users\RENT\Desktop\Projekt SpaceShop\ogloszenia-projekt\src\ogloszenia\ArchiveAdServlet.java
-C:\Users\RENT\Desktop\Projekt SpaceShop\ogloszenia-projekt\src\ogloszenia\AddNewAdServlet.java
-C:\Users\RENT\Desktop\Projekt SpaceShop\ogloszenia-projekt\src\ogloszenia\repository\UserRepository.java
-C:\Users\RENT\Desktop\Projekt SpaceShop\ogloszenia-projekt\src\ogloszenia\model\Image.java
-C:\Users\RENT\Desktop\Projekt SpaceShop\ogloszenia-projekt\src\ogloszenia\model\User.java
-C:\Users\RENT\Desktop\Projekt SpaceShop\ogloszenia-projekt\src\ogloszenia\Test.java
-C:\Users\RENT\Desktop\Projekt SpaceShop\ogloszenia-projekt\src\ogloszenia\repository\ConversationRepository.java
-C:\Users\RENT\Desktop\Projekt SpaceShop\ogloszenia-projekt\src\ogloszenia\SearchAdServlet.java
-C:\Users\RENT\Desktop\Projekt SpaceShop\ogloszenia-projekt\src\ogloszenia\repository\AdvertisementRepository.java
-C:\Users\RENT\Desktop\Projekt SpaceShop\ogloszenia-projekt\src\ogloszenia\model\Advertisement.java
-C:\Users\RENT\Desktop\Projekt SpaceShop\ogloszenia-projekt\src\ogloszenia\repository\ImageRepository.java
-C:\Users\RENT\Desktop\Projekt SpaceShop\ogloszenia-projekt\src\ogloszenia\dto\CategoryDTO.java
-C:\Users\RENT\Desktop\Projekt SpaceShop\ogloszenia-projekt\src\ogloszenia\AddNewConversationServlet.java
-C:\Users\RENT\Desktop\Projekt SpaceShop\ogloszenia-projekt\src\ogloszenia\model\CATEGORY.java
-C:\Users\RENT\Desktop\Projekt SpaceShop\ogloszenia-projekt\src\ogloszenia\model\Conversation.java
-C:\Users\RENT\Desktop\Projekt SpaceShop\ogloszenia-projekt\src\ogloszenia\repository\CategoryRepository.java
+C:\Users\snaf\Documents\GitHub\advertisement-project\src\ogloszenia\repository\AdvertisementRepository.java
+C:\Users\snaf\Documents\GitHub\advertisement-project\src\ogloszenia\ArchiveAdServlet.java
+C:\Users\snaf\Documents\GitHub\advertisement-project\src\ogloszenia\model\CATEGORY.java
+C:\Users\snaf\Documents\GitHub\advertisement-project\src\ogloszenia\model\Image.java
+C:\Users\snaf\Documents\GitHub\advertisement-project\src\ogloszenia\SearchAdServlet.java
+C:\Users\snaf\Documents\GitHub\advertisement-project\src\ogloszenia\AddNewConversationMessageServlet.java
+C:\Users\snaf\Documents\GitHub\advertisement-project\src\ogloszeniar\hibernate\util\HibernateUtil.java
+C:\Users\snaf\Documents\GitHub\advertisement-project\src\ogloszenia\LoginServlet.java
+C:\Users\snaf\Documents\GitHub\advertisement-project\src\ogloszenia\repository\UserRepository.java
+C:\Users\snaf\Documents\GitHub\advertisement-project\src\ogloszenia\AddNewAdServlet.java
+C:\Users\snaf\Documents\GitHub\advertisement-project\src\ogloszenia\model\ConversationMessage.java
+C:\Users\snaf\Documents\GitHub\advertisement-project\src\ogloszenia\repository\ConversationRepository.java
+C:\Users\snaf\Documents\GitHub\advertisement-project\src\ogloszenia\LogoutServlet.java
+C:\Users\snaf\Documents\GitHub\advertisement-project\src\ogloszenia\repository\ImageRepository.java
+C:\Users\snaf\Documents\GitHub\advertisement-project\src\ogloszenia\repository\CategoryRepository.java
+C:\Users\snaf\Documents\GitHub\advertisement-project\src\ogloszenia\dto\CategoryDTO.java
+C:\Users\snaf\Documents\GitHub\advertisement-project\src\ogloszenia\model\dto\CategoryDTO.java
+C:\Users\snaf\Documents\GitHub\advertisement-project\src\ogloszenia\model\User.java
+C:\Users\snaf\Documents\GitHub\advertisement-project\src\ogloszenia\model\Advertisement.java
+C:\Users\snaf\Documents\GitHub\advertisement-project\src\ogloszenia\model\Conversation.java
+C:\Users\snaf\Documents\GitHub\advertisement-project\src\ogloszenia\AddNewConversationServlet.java
+C:\Users\snaf\Documents\GitHub\advertisement-project\src\ogloszenia\RegisterUserServlet.java
+C:\Users\snaf\Documents\GitHub\advertisement-project\src\ogloszenia\repository\ConversationMessageRepository.java
